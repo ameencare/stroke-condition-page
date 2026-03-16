@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, Footprints, Hand, Scale, Arm } from "lucide-react";
+import { AlertTriangle, Footprints, Hand, Scale, MoveHorizontal } from "lucide-react";
 
-const ease = [0.2, 0, 0, 1];
+const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const signs = [
   { icon: Footprints, text: "صعوبة المشي" },
