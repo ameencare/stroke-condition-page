@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import logoImage from "@/assets/logo-ameen.png";
 
 const FooterSection = () => {
   return (
