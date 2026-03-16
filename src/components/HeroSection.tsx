@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CalendarCheck, Stethoscope, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-rehab.jpg";
+import logoImage from "@/assets/logo-ameen.png";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
