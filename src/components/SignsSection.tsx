@@ -5,7 +5,7 @@ const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const signs = [
   { icon: Footprints, text: "صعوبة المشي" },
-  { icon: Arm, text: "ضعف في أحد جانبي الجسم" },
+  { icon: MoveHorizontal, text: "ضعف في أحد جانبي الجسم" },
   { icon: Scale, text: "مشاكل في التوازن" },
   { icon: Hand, text: "صعوبة استخدام اليد أو الذراع" },
 ];

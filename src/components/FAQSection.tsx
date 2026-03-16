@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const ease = [0.2, 0, 0, 1];
+const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const faqs = [
   {

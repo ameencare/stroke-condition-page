@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Home, UserCheck, Clock, Shield } from "lucide-react";
 
-const ease = [0.2, 0, 0, 1];
+const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const benefits = [
   { icon: Home, title: "راحة المنزل", desc: "تلقي العلاج في بيئة مألوفة ومريحة تساعد على التعافي السريع." },
