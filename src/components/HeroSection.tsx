@@ -1,0 +1,78 @@
+import { motion } from "framer-motion";
+import { CalendarCheck, Stethoscope, Phone } from "lucide-react";
+import heroImage from "@/assets/hero-rehab.jpg";
+
+const ease = [0.2, 0, 0, 1];
+
+const HeroSection = () => {
+  return (
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-primary">
+      {/* Background image overlay */}
+      <div className="absolute inset-0">
+        <img src={heroImage} alt="إعادة التأهيل بعد الجلطة" className="h-full w-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-primary/80" />
+      </div>
+
+      <div className="container relative z-10 py-16 md:py-24">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease }}
+          >
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">
+              شركة أمين للرعاية الطبية المنزلية
+            </p>
+            <h1 className="mb-6 text-4xl font-semibold leading-[1.1] tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
+              التأهيل بعد الجلطة الدماغية – طريقك لاستعادة الحركة والاستقلالية
+            </h1>
+            <p className="mb-8 text-lg leading-relaxed text-primary-foreground/85 max-w-xl">
+              نحن في شركة أمين نوفر رعاية متخصصة في منزلك، لنساعدك على استعادة القوة والتوازن بخطوات واثقة.
+            </p>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href="#booking"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-4 text-base font-semibold text-secondary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
+              >
+                <CalendarCheck className="h-5 w-5" />
+                احجز جلسة علاج طبيعي منزلي
+              </a>
+              <a
+                href="#consultation"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-foreground/15 px-6 py-4 text-base font-semibold text-primary-foreground backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-foreground/25 active:scale-[0.98]"
+              >
+                <Stethoscope className="h-5 w-5" />
+                اطلب استشارة من الفريق الطبي
+              </a>
+              <a
+                href="https://wa.me/966500000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp px-6 py-4 text-base font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
+              >
+                <Phone className="h-5 w-5" />
+                تواصل مع شؤون المرضى
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2, ease }}
+            className="hidden md:block"
+          >
+            <img
+              src={heroImage}
+              alt="إعادة التأهيل بعد الجلطة الدماغية"
+              className="w-full rounded-3xl shadow-2xl object-cover aspect-[4/3]"
+            />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
