@@ -21,9 +21,9 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
           >
-            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">
-              شركة أمين للرعاية الطبية المنزلية
-            </p>
+            <div className="mb-4">
+              <img src={logoImage} alt="شركة أمين للرعاية الطبية المنزلية" className="h-16 w-auto" />
+            </div>
             <h1 className="mb-6 text-4xl font-semibold leading-[1.1] tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
               التأهيل بعد الجلطة الدماغية – طريقك لاستعادة الحركة والاستقلالية
             </h1>

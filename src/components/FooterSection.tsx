@@ -7,7 +7,9 @@ const FooterSection = () => {
       <div className="container">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <h3 className="mb-3 text-lg font-bold text-foreground">شركة أمين للرعاية الطبية المنزلية</h3>
+            <div className="mb-4">
+              <img src={logoImage} alt="شركة أمين للرعاية الطبية المنزلية" className="h-14 w-auto" />
+            </div>
             <p className="text-muted-foreground leading-relaxed">
               نوفر خدمات التأهيل والعلاج الطبيعي المنزلي بأعلى معايير الجودة والاحترافية.
             </p>
