@@ -36,8 +36,8 @@ const StrokeDefinitionSection = () => {
           className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
           style={{ boxShadow: 'var(--shadow-card)' }}>
           
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">تشير إرشادات وزارة الصحة السعودية إلى أهمية بدء التأهيل خلال 24-48 ساعة بعد استقرار الحالة، مع وضع خطة علاجية فردية يتم متابعتها بشكل مستمر من فريق متخصص.
-
+          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">هي حالة يحدث فيها انقطاع في تدفق الدم الى جزء من الدماغ، نتيجة انسداد أو تمزق في أحد الشرايين، وتعد الأكثر شيوعًا لدى كبار السن.
+وعادةً بعد الجلطة الدماغية قد يفقد المريض جزءًا من الحركة أو التوازن أو أداء الأنشطة اليومية،
 
 
 
