@@ -26,8 +26,8 @@ const Index = () => {
       </a>
 
       {/* Top bar */}
-      <div className="bg-primary px-4 py-3 flex items-center justify-center">
-        <img src={logoImage} alt="شركة أمين" className="h-10 w-auto" />
+      <div className="bg-primary px-4 py-4 flex items-center justify-center">
+        <img src={logoImage} alt="شركة أمين للرعاية الطبية المنزلية" className="h-16 md:h-20 w-auto drop-shadow-lg" />
       </div>
 
       {/* Main content — fills remaining viewport */}
