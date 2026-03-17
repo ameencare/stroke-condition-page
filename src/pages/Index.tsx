@@ -19,8 +19,8 @@ const Index = () => {
       <WhatsAppButton />
       <Navbar />
       <HeroSection />
-      <StrokeDefinitionSection />
       <AboutStrokeSection />
+      <StrokeDefinitionSection />
       <PhysiotherapyRoleSection />
       <HomeRehabSection />
       <RecoveryDurationSection />
