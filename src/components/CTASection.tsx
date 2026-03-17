@@ -5,20 +5,20 @@ const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const CTASection = () => {
   return (
-    <section id="booking" className="py-20 md:py-28">
+    <section id="booking" className="py-14 md:py-20">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease }}
-          className="mx-auto max-w-3xl rounded-3xl bg-primary p-10 md:p-14 text-center"
+          className="mx-auto max-w-3xl rounded-3xl bg-primary p-8 md:p-12 text-center"
           style={{ boxShadow: '0 20px 40px -10px rgba(0,0,0,0.2)' }}
         >
-          <h2 className="mb-4 text-3xl font-semibold leading-snug tracking-tight text-primary-foreground md:text-4xl">
+          <h2 className="mb-3 text-3xl font-semibold leading-snug tracking-tight text-primary-foreground md:text-4xl">
             ابدأ التأهيل مبكرًا… وامنح نفسك فرصة أفضل للتعافي
           </h2>
-          <p className="mb-8 text-lg leading-relaxed text-primary-foreground/85">
+          <p className="mb-6 text-lg leading-relaxed text-primary-foreground/85">
             كلما بدأت مبكراً في التأهيل، زادت فرصتك في استعادة حياتك الطبيعية. فريقنا جاهز لمساعدتك.
           </p>
 

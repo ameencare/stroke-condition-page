@@ -33,16 +33,16 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="bg-muted py-20 md:py-28">
+    <section className="bg-muted py-14 md:py-20">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease }}
-          className="mb-12 text-center"
+          className="mb-8 text-center"
         >
-          <h2 className="mb-4 text-3xl font-semibold leading-snug tracking-tight text-foreground md:text-4xl">
+          <h2 className="mb-3 text-3xl font-semibold leading-snug tracking-tight text-foreground md:text-4xl">
             الأسئلة الشائعة
           </h2>
         </motion.div>
@@ -62,10 +62,10 @@ const FAQSection = () => {
                 className="rounded-2xl bg-card px-6 border-none"
                 style={{ boxShadow: 'var(--shadow-card)' }}
               >
-                <AccordionTrigger className="text-right text-lg font-medium text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="text-right text-lg font-medium text-foreground hover:no-underline py-4">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed text-base pb-5">
+                <AccordionContent className="text-muted-foreground leading-relaxed text-base pb-4">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

@@ -13,7 +13,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-primary/80" />
       </div>
 
-      <div className="container relative z-10 py-16 md:py-24">
+      <div className="container relative z-10 py-12 md:py-20">
         <div className="grid gap-8 md:grid-cols-2 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -23,11 +23,11 @@ const HeroSection = () => {
             <div className="mb-4">
               <img src={logoImage} alt="شركة أمين للرعاية الطبية المنزلية" className="h-16 w-auto" />
             </div>
-            <h1 className="mb-6 text-4xl font-semibold leading-[1.1] tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 text-4xl font-semibold leading-[1.1] tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
               التأهيل بعد الجلطة الدماغية – ابدأ رحلة التعافي واستعد حركتك
             </h1>
-            <p className="mb-8 text-lg leading-relaxed text-primary-foreground/85 max-w-xl">
-              العلاج الطبيعي المبكر بعد الجلطة يساعد على تحسين الحركة والتوازن وتقليل الإعاقة، وفق توصيات وزارة الصحة السعودية والجمعية الأمريكية للقلب.
+            <p className="mb-6 text-lg leading-relaxed text-primary-foreground/85 max-w-xl">
+              العلاج الطبيعي المبكر بعد الجلطة يساعد على تحسين الحركة والتوازن وتقليل الإعاقة، وفق توصيات وزارة الصحة السعودية.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">

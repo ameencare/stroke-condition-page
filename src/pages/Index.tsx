@@ -1,11 +1,11 @@
 import ProgressBar from "@/components/ProgressBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import HeroSection from "@/components/HeroSection";
+import StrokeDefinitionSection from "@/components/StrokeDefinitionSection";
 import AboutStrokeSection from "@/components/AboutStrokeSection";
 import PhysiotherapyRoleSection from "@/components/PhysiotherapyRoleSection";
 import HomeRehabSection from "@/components/HomeRehabSection";
 import RecoveryDurationSection from "@/components/RecoveryDurationSection";
-import SignsSection from "@/components/SignsSection";
 import FAQSection from "@/components/FAQSection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
@@ -17,11 +17,11 @@ const Index = () => {
       <ProgressBar />
       <WhatsAppButton />
       <HeroSection />
+      <StrokeDefinitionSection />
       <AboutStrokeSection />
       <PhysiotherapyRoleSection />
       <HomeRehabSection />
       <RecoveryDurationSection />
-      <SignsSection />
       <FAQSection />
       <TrustSection />
       <CTASection />
