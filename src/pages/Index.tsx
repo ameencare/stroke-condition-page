@@ -20,7 +20,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <EarlyRehabSection />
-      <StrokeDefinitionSection />
+      
       <PostStrokeEffectsSection />
       <PhysiotherapyRoleSection />
       <HomeRehabSection />
