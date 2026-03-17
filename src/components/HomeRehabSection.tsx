@@ -40,7 +40,7 @@ const HomeRehabSection = () => {
           <h3 className="text-xl font-bold text-foreground mb-4 text-right">
             ابدأ رحلة التعافي مع العلاج الطبيعي
           </h3>
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">في جلسة الفحص والعلاج الطبيعي مع أمين، يقوم الأخصائي بتقييم شامل بعد الجلطة الدماغية، يشمل:
+          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">في جلسة الفحص والعلاج الطبيعي مع رعاية أمين، يقوم الأخصائي بتقييم شامل بعد الجلطة الدماغية، يشمل:
 
           </p>
 
