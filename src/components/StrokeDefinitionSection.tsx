@@ -4,7 +4,8 @@ import { Brain, AlertTriangle, Footprints, Scale, Hand, Clock } from "lucide-rea
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const effects = [
-  { icon: AlertTriangle, text: "ضعف في حركة اليد أو الذراع" },
+  { icon: AlertTriangle, text: "ضعف أو شلل في أحد جانبي الجسم" },
+  { icon: Hand, text: "ضعف في حركة اليد أو الذراع" },
   { icon: Footprints, text: "صعوبة في المشي أو التوازن" }
 ];
 
