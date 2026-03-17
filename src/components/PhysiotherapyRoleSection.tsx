@@ -1,34 +1,13 @@
 import { motion } from "framer-motion";
-import { Activity, Dumbbell, Scale, Footprints, HandMetal } from "lucide-react";
+import { Activity, Dumbbell, Scale, Footprints } from "lucide-react";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const services = [
-  {
-    icon: Activity,
-    title: "تحسين الحركة",
-    description: "نركز على تمارين متخصصة لاستعادة وظائف الأطراف وتسهيل الحركة اليومية.",
-  },
-  {
-    icon: Dumbbell,
-    title: "تقوية العضلات",
-    description: "برامج تدريبية لتقوية العضلات الضعيفة واستعادة القوة البدنية تدريجياً.",
-  },
-  {
-    icon: Scale,
-    title: "تدريب التوازن",
-    description: "تمارين متخصصة لتحسين التوازن وتقليل خطر السقوط والإصابات.",
-  },
-  {
-    icon: Footprints,
-    title: "استعادة القدرة على المشي",
-    description: "تدريب مكثف على المشي باستخدام تقنيات حديثة لاستعادة الاستقلالية.",
-  },
-  {
-    icon: HandMetal,
-    title: "تحسين الأنشطة اليومية",
-    description: "مساعدة المريض على أداء الأنشطة اليومية كالأكل والملبس والنظافة الشخصية.",
-  },
+  { icon: Activity, title: "تحسين الحركة" },
+  { icon: Dumbbell, title: "تقوية العضلات" },
+  { icon: Scale, title: "تحسين التوازن" },
+  { icon: Footprints, title: "استعادة الأنشطة اليومية" },
 ];
 
 const PhysiotherapyRoleSection = () => {
@@ -50,7 +29,7 @@ const PhysiotherapyRoleSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -58,12 +37,11 @@ const PhysiotherapyRoleSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05, ease }}
-              className="rounded-3xl bg-card p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+              className="flex flex-col items-center rounded-3xl bg-card p-8 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
               <service.icon className="mb-4 h-12 w-12 text-secondary" />
-              <h3 className="mb-2 text-xl font-bold text-foreground">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              <h3 className="text-lg font-bold text-foreground">{service.title}</h3>
             </motion.div>
           ))}
         </div>

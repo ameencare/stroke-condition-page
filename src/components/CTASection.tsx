@@ -16,7 +16,7 @@ const CTASection = () => {
           style={{ boxShadow: '0 20px 40px -10px rgba(0,0,0,0.2)' }}
         >
           <h2 className="mb-4 text-3xl font-semibold leading-snug tracking-tight text-primary-foreground md:text-4xl">
-            ابدأ رحلة التعافي اليوم
+            ابدأ التأهيل مبكرًا… وامنح نفسك فرصة أفضل للتعافي
           </h2>
           <p className="mb-8 text-lg leading-relaxed text-primary-foreground/85">
             كلما بدأت مبكراً في التأهيل، زادت فرصتك في استعادة حياتك الطبيعية. فريقنا جاهز لمساعدتك.
@@ -28,7 +28,7 @@ const CTASection = () => {
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-4 text-base font-semibold text-secondary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
             >
               <CalendarCheck className="h-5 w-5" />
-              احجز موعد
+              احجز الآن
             </a>
             <a
               href="#"
