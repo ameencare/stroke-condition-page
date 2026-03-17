@@ -4,8 +4,8 @@ import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, Message
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const assessmentItems = [
-"القوة العضلية والحركة الوظيفية",
-"مدى الحركة للمفاصل والتوازن",
+"القوة العضلية والمدى الحركي للمفاصل",
+"الحركة الوظيفية مثل (الجلوس، الوقوف والمشي) والتوازن",
 "الإحساس والتحكم الحركي"];
 
 
