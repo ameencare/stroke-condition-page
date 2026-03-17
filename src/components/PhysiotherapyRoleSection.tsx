@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Activity, Dumbbell, Scale, Footprints } from "lucide-react";
+import { Activity, Dumbbell, Scale, Footprints, Star } from "lucide-react";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
-const services = [
-  { icon: Activity, title: "تحسين الحركة" },
+const benefits = [
+  { icon: Activity, title: "تحسين الحركة تدريجيًا" },
   { icon: Dumbbell, title: "تقوية العضلات" },
   { icon: Scale, title: "تحسين التوازن" },
   { icon: Footprints, title: "استعادة الأنشطة اليومية" },
@@ -12,7 +12,7 @@ const services = [
 
 const PhysiotherapyRoleSection = () => {
   return (
-    <section className="py-14 md:py-20">
+    <section className="bg-muted py-14 md:py-20">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -21,30 +21,49 @@ const PhysiotherapyRoleSection = () => {
           transition={{ duration: 0.4, ease }}
           className="mb-8 text-center"
         >
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-sm font-semibold text-secondary">
+            <Star className="h-4 w-4" />
+            التعامل مع المشكلة
+          </div>
           <h2 className="mb-3 text-3xl font-semibold leading-snug tracking-tight text-foreground md:text-4xl">
-            دور العلاج الطبيعي بعد الجلطة
+            كيف يساعد العلاج الطبيعي؟
           </h2>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            العلاج الطبيعي هو الركيزة الأساسية في رحلة التعافي بعد الجلطة الدماغية
+            العلاج الطبيعي المبكر بعد الجلطة يساعد على:
           </p>
         </motion.div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
-          {services.map((service, i) => (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto mb-8">
+          {benefits.map((b, i) => (
             <motion.div
-              key={service.title}
+              key={b.title}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05, ease }}
-              className="flex flex-col items-center rounded-3xl bg-card p-7 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+              className="flex flex-col items-center rounded-3xl bg-card p-6 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
-              <service.icon className="mb-3 h-12 w-12 text-secondary" />
-              <h3 className="text-lg font-bold text-foreground">{service.title}</h3>
+              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/10">
+                <b.icon className="h-7 w-7 text-secondary" />
+              </div>
+              <h3 className="text-base font-bold text-foreground">{b.title}</h3>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2, ease }}
+          className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
+          style={{ boxShadow: 'var(--shadow-card)' }}
+        >
+          <p className="text-lg leading-relaxed text-muted-foreground text-right">
+            في أمين، يركز العلاج الطبيعي على تقييم المشاكل الحركية والآلام الجسدية باستخدام عالي الخبرة أو خبير، لأن هذه هي الأنسب لحالات الجلطة. التقييم يساعد على وضع خطة علاجية دقيقة.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
