@@ -4,8 +4,9 @@ import { Brain, AlertTriangle, Footprints, Scale, Hand, Clock } from "lucide-rea
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const effects = [
-{ icon: AlertTriangle, text: "ضعف  أو شلل في أحد جانبي الجسم ويؤثر على الحركة والتوازن" },
-{ icon: Hand, text: "تأثير على القدرة على أداء الأنشطة اليومية" }];
+  { icon: AlertTriangle, text: "ضعف أو شلل في أحد جانبي الجسم\nضعف في حركة اليد أو الذراع" },
+  { icon: Footprints, text: "صعوبة في المشي أو التوازن" }
+];
 
 
 const StrokeDefinitionSection = () => {
@@ -53,7 +54,7 @@ const StrokeDefinitionSection = () => {
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-destructive/10">
                   <item.icon className="h-5 w-5 text-destructive" />
                 </div>
-                <p className="text-sm font-medium text-foreground">{item.text}</p>
+                <p className="text-sm font-medium text-foreground whitespace-pre-line">{item.text}</p>
               </div>)}
           </div>
 
