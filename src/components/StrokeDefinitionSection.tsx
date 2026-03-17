@@ -5,7 +5,7 @@ const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const effects = [
 { icon: AlertTriangle, text: "ضعف  أو شلل في أحد جانبي الجسم ويؤثر على الحركة والتوازن" },
-{ icon: Hand, text: "تأثير على القدرة على أداء الأنشطة اليومية" }];
+{ icon: Hand, text: "صعوبة في الحركة مثل التوازن أو المشي" }];
 
 
 const StrokeDefinitionSection = () => {
