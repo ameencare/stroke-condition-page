@@ -7,7 +7,7 @@ const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-primary">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-primary pt-16">
       <div className="absolute inset-0">
         <img src={heroImage} alt="إعادة التأهيل بعد الجلطة" className="h-full w-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-primary/80" />
@@ -20,8 +20,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
           >
-            <div className="mb-4">
-              <img src={logoImage} alt="شركة أمين للرعاية الطبية المنزلية" className="h-16 w-auto" />
+            <div className="mb-6">
+              <img src={logoImage} alt="شركة أمين للرعاية الطبية المنزلية" className="h-20 md:h-24 w-auto drop-shadow-lg" />
             </div>
             <h1 className="mb-4 text-4xl font-semibold leading-[1.1] tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
               التأهيل بعد الجلطة الدماغية – ابدأ رحلة التعافي واستعد حركتك
