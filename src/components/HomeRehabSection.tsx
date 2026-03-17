@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, MessageCircle } from "lucide-react";
+import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, MessageCircle, HeartHandshake } from "lucide-react";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const assessmentItems = [
-  "القوة العضلية والحركة الوظيفية",
-  "مدى الحركة للمفاصل والتوازن",
-  "الإحساس والتحكم الحركي",
-];
+"القوة العضلية والحركة الوظيفية",
+"مدى الحركة للمفاصل والتوازن",
+"الإحساس والتحكم الحركي"];
+
 
 const HomeRehabSection = () => {
   return (
@@ -18,10 +18,10 @@ const HomeRehabSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease }}
-          className="mb-8 text-center"
-        >
+          className="mb-8 text-center">
+          
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-            <Stethoscope className="h-4 w-4" />
+            <HeartHandshake className="h-4 w-4" />
             رحلتك مع أمين
           </div>
           <h2 className="mb-3 text-3xl font-semibold leading-snug tracking-tight text-foreground md:text-4xl">
@@ -35,8 +35,8 @@ const HomeRehabSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1, ease }}
           className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
-          style={{ boxShadow: 'var(--shadow-card)' }}
-        >
+          style={{ boxShadow: 'var(--shadow-card)' }}>
+          
           <h3 className="text-xl font-bold text-foreground mb-4 text-right">
             ابدأ رحلة التعافي مع العلاج الطبيعي
           </h3>
@@ -45,14 +45,14 @@ const HomeRehabSection = () => {
           </p>
 
           <div className="space-y-3 mb-6">
-            {assessmentItems.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 rounded-2xl bg-primary/5 p-4">
+            {assessmentItems.map((item, i) =>
+            <div key={i} className="flex items-center gap-3 rounded-2xl bg-primary/5 p-4">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                   <ClipboardCheck className="h-4 w-4 text-primary" />
                 </div>
                 <p className="text-sm font-medium text-foreground">{item}</p>
               </div>
-            ))}
+            )}
           </div>
 
           <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">
@@ -71,15 +71,15 @@ const HomeRehabSection = () => {
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a
               href="#booking"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-4 text-base font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
-            >
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-4 text-base font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]">
+              
               <CalendarCheck className="h-5 w-5" />
               احجز جلسة علاج طبيعي الآن
             </a>
             <a
               href="#consultation"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-muted px-6 py-4 text-base font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent active:scale-[0.98]"
-            >
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-muted px-6 py-4 text-base font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent active:scale-[0.98]">
+              
               <Stethoscope className="h-5 w-5" />
               اطلب استشارة هاتفية مجانية
             </a>
@@ -87,16 +87,16 @@ const HomeRehabSection = () => {
               href="https://wa.me/966500000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp px-6 py-4 text-base font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
-            >
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp px-6 py-4 text-base font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]">
+              
               <MessageCircle className="h-5 w-5" />
               تواصل عبر واتساب
             </a>
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HomeRehabSection;

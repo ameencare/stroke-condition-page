@@ -4,9 +4,9 @@ import { Brain, AlertTriangle, Footprints, Scale, Hand, Clock } from "lucide-rea
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const effects = [
-  { icon: AlertTriangle, text: "ضعف الحركة أو صعوبة في التوازن" },
-  { icon: Hand, text: "تأثير على القدرة على أداء الأنشطة اليومية" },
-];
+{ icon: AlertTriangle, text: "ضعف الحركة أو صعوبة في التوازن" },
+{ icon: Hand, text: "تأثير على القدرة على أداء الأنشطة اليومية" }];
+
 
 const StrokeDefinitionSection = () => {
   return (
@@ -17,8 +17,8 @@ const StrokeDefinitionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease }}
-          className="mx-auto max-w-3xl text-center"
-        >
+          className="mx-auto max-w-3xl text-center">
+          
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
             <Brain className="h-4 w-4" />
             تعريف المشكلة
@@ -34,22 +34,22 @@ const StrokeDefinitionSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1, ease }}
           className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
-          style={{ boxShadow: 'var(--shadow-card)' }}
-        >
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">
-            الجلطة الدماغية تحدث عندما يتوقف تدفق الدم إلى الدماغ، غالبًا بسبب انسداد أو تمزق أحد شرايين الدم.
+          style={{ boxShadow: 'var(--shadow-card)' }}>
+          
+          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">الجلطة الدماغية تحدث عندما يتوقف تدفق الدم إلى الدماغ، غالبًا بسبب انسداد أو تمزق أحد شرايين الدم
+
           </p>
 
           <p className="text-base font-semibold text-foreground text-right mb-4">قد تسبب:</p>
           <div className="grid gap-3 sm:grid-cols-2 mb-6">
-            {effects.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 rounded-2xl bg-destructive/5 p-4">
+            {effects.map((item, i) =>
+            <div key={i} className="flex items-center gap-3 rounded-2xl bg-destructive/5 p-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-destructive/10">
                   <item.icon className="h-5 w-5 text-destructive" />
                 </div>
                 <p className="text-sm font-medium text-foreground">{item.text}</p>
               </div>
-            ))}
+            )}
           </div>
 
           <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
@@ -66,8 +66,8 @@ const StrokeDefinitionSection = () => {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default StrokeDefinitionSection;

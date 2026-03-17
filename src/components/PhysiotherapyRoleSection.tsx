@@ -4,11 +4,11 @@ import { Activity, Dumbbell, Scale, Footprints, Star } from "lucide-react";
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const benefits = [
-  { icon: Activity, title: "تحسين الحركة تدريجيًا" },
-  { icon: Dumbbell, title: "تقوية العضلات" },
-  { icon: Scale, title: "تحسين التوازن" },
-  { icon: Footprints, title: "استعادة الأنشطة اليومية" },
-];
+{ icon: Activity, title: "تحسين الحركة تدريجيًا" },
+{ icon: Dumbbell, title: "تقوية العضلات" },
+{ icon: Scale, title: "تحسين التوازن" },
+{ icon: Footprints, title: "استعادة الأنشطة اليومية" }];
+
 
 const PhysiotherapyRoleSection = () => {
   return (
@@ -19,8 +19,8 @@ const PhysiotherapyRoleSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, ease }}
-          className="mb-8 text-center"
-        >
+          className="mb-8 text-center">
+          
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-sm font-semibold text-secondary">
             <Star className="h-4 w-4" />
             التعامل مع المشكلة
@@ -34,22 +34,22 @@ const PhysiotherapyRoleSection = () => {
         </motion.div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto mb-8">
-          {benefits.map((b, i) => (
-            <motion.div
-              key={b.title}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.05, ease }}
-              className="flex flex-col items-center rounded-3xl bg-card p-6 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-              style={{ boxShadow: 'var(--shadow-card)' }}
-            >
+          {benefits.map((b, i) =>
+          <motion.div
+            key={b.title}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.05, ease }}
+            className="flex flex-col items-center rounded-3xl bg-card p-6 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+            style={{ boxShadow: 'var(--shadow-card)' }}>
+            
               <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/10">
                 <b.icon className="h-7 w-7 text-secondary" />
               </div>
               <h3 className="text-base font-bold text-foreground">{b.title}</h3>
             </motion.div>
-          ))}
+          )}
         </div>
 
         <motion.div
@@ -58,15 +58,15 @@ const PhysiotherapyRoleSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.2, ease }}
           className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
-          style={{ boxShadow: 'var(--shadow-card)' }}
-        >
-          <p className="text-lg leading-relaxed text-muted-foreground text-right">
-            في أمين، يركز العلاج الطبيعي على تقييم المشاكل الحركية والآلام الجسدية باستخدام عالي الخبرة أو خبير، لأن هذه هي الأنسب لحالات الجلطة. التقييم يساعد على وضع خطة علاجية دقيقة.
+          style={{ boxShadow: 'var(--shadow-card)' }}>
+          
+          <p className="text-lg leading-relaxed text-muted-foreground text-right">في أمين، يركز العلاج الطبيعي على تقييم المشاكل الحركية والآلام الجسدية والتصنيف الموصى به هو أخصائي عالي الخبرة أو خبير، لأن هي الأنسب لحالات الجلطة لتطلبها خبرة أعمق، بينما التقييم يساعد على وضع خطة علاجية دقيقة.
+
           </p>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default PhysiotherapyRoleSection;
