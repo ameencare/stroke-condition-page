@@ -4,10 +4,10 @@ import { Bike, Dumbbell, ArrowUp, Footprints, Star } from "lucide-react";
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const benefits = [
-{ icon: Bike, title: "تحسين الحركة تدريجيًا" },
+{ icon: Bike, title: "استعادة الحركة تدريجيًا" },
 { icon: Dumbbell, title: "تقوية العضلات" },
-{ icon: ArrowUp, title: "تحسين التوازن" },
-{ icon: Footprints, title: "استعادة الأنشطة اليومية" }];
+{ icon: ArrowUp, title: "تحسين التوازن وتقليل خطر السقوط" },
+{ icon: Footprints, title: "إعادة تعلم المشي والأنشطة اليومية" }];
 
 
 const PhysiotherapyRoleSection = () => {
