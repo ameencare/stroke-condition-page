@@ -54,7 +54,7 @@ const StrokeDefinitionSection = () => {
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-destructive/10">
                   <item.icon className="h-5 w-5 text-destructive" />
                 </div>
-                <p className="text-sm font-medium text-foreground">{item.text}</p>
+                <p className="text-sm font-medium text-foreground whitespace-pre-line">{item.text}</p>
               </div>)}
           </div>
 
