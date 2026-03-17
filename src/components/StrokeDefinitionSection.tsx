@@ -4,10 +4,9 @@ import { Brain, AlertTriangle, Footprints, Scale, Hand, Clock } from "lucide-rea
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const effects = [
-  { icon: AlertTriangle, text: "ضعف أو شلل في أحد جانبي الجسم \n\n" },
-  { icon: Hand, text: "ضعف في استخدام اليد أو الذراع" },
-  { icon: Footprints, text: "صعوبة في الحركة مثل التوازن أو المشي" }
-];
+{ icon: AlertTriangle, text: "ضعف  أو شلل في أحد جانبي الجسم ويؤثر على الحركة والتوازن" },
+{ icon: Hand, text: "تأثير على القدرة على أداء الأنشطة اليومية" }];
+
 
 const StrokeDefinitionSection = () => {
   return (
@@ -38,20 +37,28 @@ const StrokeDefinitionSection = () => {
           style={{ boxShadow: 'var(--shadow-card)' }}>
           
           <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">تشير إرشادات وزارة الصحة السعودية إلى أهمية بدء التأهيل خلال 24-48 ساعة بعد استقرار الحالة، مع وضع خطة علاجية فردية يتم متابعتها بشكل مستمر من فريق متخصص.
+
+
+
+
+
+
+
           </p>
 
-          <p className="text-base font-semibold text-foreground text-right mb-4">قد تسبب:</p>
+          <p className="text-base font-semibold text-foreground text-right mb-4">ضعف أو شلل في أحد جانبي الجسم
+</p>
           <div className="grid gap-3 sm:grid-cols-2 mb-6">
             {effects.map((item, i) => <div key={i} className="flex items-center gap-3 rounded-2xl bg-destructive/5 p-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-destructive/10">
                   <item.icon className="h-5 w-5 text-destructive" />
                 </div>
-                <p className="text-sm font-medium text-foreground whitespace-pre-line">{item.text}</p>
+                <p className="text-sm font-medium text-foreground">{item.text}</p>
               </div>)}
           </div>
 
           <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
-            عادةً يحتاج المريض إلى برنامج تأهيلي شامل، يشمل العلاج الطبيعي لاستعادة الحركة وتحسين القدرة على الانتقال بأمان، بالإضافة إلى تثقيف المريض حول سلامته، وفي رعاية أمين نقدم برامج تأهيل متخصصة تساعد المرضى على استعادة استقلاليتهم وتحسين جودة حياتهم في المنزل.
+            عادةً يحتاج المريض إلى برنامج تأهيلي شامل، يشمل العلاج الطبيعي لاستعادة الحركة وتحسين القدرة على الانتقال بأمان، بالإضافة إلى تثقيف المريض حول سلامته.
           </p>
 
           <div className="flex items-center gap-3 rounded-2xl bg-primary/5 p-4">
