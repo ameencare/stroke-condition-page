@@ -20,8 +20,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
           >
-            <div className="mb-4">
-              <img src={logoImage} alt="شركة أمين للرعاية الطبية المنزلية" className="h-16 w-auto" />
+            <div className="mb-6">
+              <img src={logoImage} alt="شركة أمين للرعاية الطبية المنزلية" className="h-20 md:h-24 w-auto drop-shadow-lg" />
             </div>
             <h1 className="mb-4 text-4xl font-semibold leading-[1.1] tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
               التأهيل بعد الجلطة الدماغية – ابدأ رحلة التعافي واستعد حركتك

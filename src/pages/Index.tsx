@@ -17,6 +17,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <ProgressBar />
       <WhatsAppButton />
+      <Navbar />
       <HeroSection />
       <StrokeDefinitionSection />
       <AboutStrokeSection />
