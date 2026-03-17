@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { Home, UserCheck, Clock, Shield } from "lucide-react";
+import { ClipboardCheck, FileText, Home, TrendingUp } from "lucide-react";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const benefits = [
-  { icon: Home, title: "راحة المنزل", desc: "تلقي العلاج في بيئة مألوفة ومريحة تساعد على التعافي السريع." },
-  { icon: UserCheck, title: "رعاية مخصصة", desc: "برنامج تأهيلي مصمم خصيصاً لحالتك واحتياجاتك الفردية." },
-  { icon: Clock, title: "مواعيد مرنة", desc: "جدول علاجي يناسب ظروفك وظروف عائلتك." },
-  { icon: Shield, title: "فريق طبي متخصص", desc: "أخصائيون معتمدون ذوو خبرة واسعة في تأهيل ما بعد الجلطة." },
+  { icon: ClipboardCheck, title: "تقييم شامل للحالة" },
+  { icon: FileText, title: "خطة علاج مخصصة" },
+  { icon: Home, title: "جلسات علاج طبيعي منزلية" },
+  { icon: TrendingUp, title: "متابعة مستمرة للتقدم" },
 ];
 
 const HomeRehabSection = () => {
@@ -29,7 +29,7 @@ const HomeRehabSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
           {benefits.map((b, i) => (
             <motion.div
               key={b.title}
@@ -37,16 +37,13 @@ const HomeRehabSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05, ease }}
-              className="flex gap-4 rounded-3xl bg-card p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+              className="flex flex-col items-center rounded-3xl bg-card p-8 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
                 <b.icon className="h-7 w-7 text-primary" />
               </div>
-              <div>
-                <h3 className="mb-1 text-lg font-bold text-foreground">{b.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{b.desc}</p>
-              </div>
+              <h3 className="text-lg font-bold text-foreground">{b.title}</h3>
             </motion.div>
           ))}
         </div>

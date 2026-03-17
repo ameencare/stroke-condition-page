@@ -19,14 +19,8 @@ const RecoveryDurationSection = () => {
             المدة المتوقعة للتعافي
           </h2>
           <div className="rounded-3xl bg-card p-8 md:p-10 text-right" style={{ boxShadow: 'var(--shadow-card)' }}>
-            <p className="mb-4 text-lg leading-relaxed text-muted-foreground">
-              تختلف مدة التعافي بعد الجلطة الدماغية من مريض لآخر حسب عدة عوامل، منها شدة الجلطة، المنطقة المتأثرة من الدماغ، وسرعة بدء برنامج التأهيل.
-            </p>
-            <p className="mb-4 text-lg leading-relaxed text-muted-foreground">
-              بشكل عام، يمكن أن تستغرق فترة التأهيل من عدة أسابيع إلى عدة أشهر. التحسن الأكبر يحدث عادةً خلال الأشهر الثلاثة إلى الستة الأولى بعد الجلطة.
-            </p>
-            <p className="text-lg font-medium leading-relaxed text-foreground">
-              البدء المبكر في العلاج الطبيعي يزيد من فرص التعافي بشكل ملحوظ ويساعد على تحقيق نتائج أفضل.
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              تختلف مدة التعافي من أسابيع إلى عدة أشهر حسب شدة الحالة والالتزام بالعلاج. التحسن الأكبر يحدث عادةً خلال الأشهر الثلاثة إلى الستة الأولى بعد الجلطة. البدء المبكر في العلاج الطبيعي يزيد من فرص التعافي بشكل ملحوظ.
             </p>
           </div>
         </motion.div>

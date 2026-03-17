@@ -23,14 +23,14 @@ const SignsSection = () => {
         >
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-destructive/10 px-4 py-2 text-sm font-semibold text-destructive">
             <AlertTriangle className="h-4 w-4" />
-            علامات تحتاج انتباهك
+            متى تحتاج العلاج الطبيعي؟
           </div>
           <h2 className="mb-4 text-3xl font-semibold leading-snug tracking-tight text-foreground md:text-4xl">
             علامات تدل على حاجتك للعلاج الطبيعي بعد الجلطة
           </h2>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
           {signs.map((sign, i) => (
             <motion.div
               key={sign.text}
