@@ -10,7 +10,7 @@ import RecoveryDurationSection from "@/components/RecoveryDurationSection";
 import FAQSection from "@/components/FAQSection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
-import FooterSection from "@/components/FooterSection";
+
 
 const Index = () => {
   return (
@@ -27,7 +27,7 @@ const Index = () => {
       <FAQSection />
       <TrustSection />
       <CTASection />
-      <FooterSection />
+      
     </div>
   );
 };
