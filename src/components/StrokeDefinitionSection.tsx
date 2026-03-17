@@ -36,20 +36,24 @@ const StrokeDefinitionSection = () => {
           className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
           style={{ boxShadow: 'var(--shadow-card)' }}>
           
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">الجلطة الدماغية تحدث عندما يتوقف تدفق الدم إلى الدماغ، غالبًا بسبب انسداد أو تمزق أحد شرايين الدم
+          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">تشير إرشادات وزارة الصحة السعودية إلى أهمية بدء التأهيل خلال 24-48 ساعة بعد استقرار الحالة، مع وضع خطة علاجية فردية يتم متابعتها بشكل مستمر من فريق متخصص.
+
+
+
+
+
+
 
           </p>
 
           <p className="text-base font-semibold text-foreground text-right mb-4">قد تسبب:</p>
           <div className="grid gap-3 sm:grid-cols-2 mb-6">
-            {effects.map((item, i) =>
-            <div key={i} className="flex items-center gap-3 rounded-2xl bg-destructive/5 p-4">
+            {effects.map((item, i) => <div key={i} className="flex items-center gap-3 rounded-2xl bg-destructive/5 p-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-destructive/10">
                   <item.icon className="h-5 w-5 text-destructive" />
                 </div>
                 <p className="text-sm font-medium text-foreground">{item.text}</p>
-              </div>
-            )}
+              </div>)}
           </div>
 
           <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
@@ -66,8 +70,4 @@ const StrokeDefinitionSection = () => {
           </div>
         </motion.div>
       </div>
-    </section>);
-
-};
-
-export default StrokeDefinitionSection;
+    </section>);};export default StrokeDefinitionSection;
