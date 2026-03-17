@@ -3,7 +3,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import EarlyRehabSection from "@/components/EarlyRehabSection";
-import StrokeDefinitionSection from "@/components/StrokeDefinitionSection";
+
 import PostStrokeEffectsSection from "@/components/PostStrokeEffectsSection";
 import PhysiotherapyRoleSection from "@/components/PhysiotherapyRoleSection";
 import HomeRehabSection from "@/components/HomeRehabSection";
