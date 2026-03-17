@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Activity, Dumbbell, Scale, Footprints, Star } from "lucide-react";
+import { Bike, Dumbbell, ArrowUp, Footprints, Star } from "lucide-react";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const benefits = [
-{ icon: Activity, title: "تحسين الحركة تدريجيًا" },
+{ icon: Bike, title: "تحسين الحركة تدريجيًا" },
 { icon: Dumbbell, title: "تقوية العضلات" },
-{ icon: Scale, title: "تحسين التوازن" },
+{ icon: ArrowUp, title: "تحسين التوازن" },
 { icon: Footprints, title: "استعادة الأنشطة اليومية" }];
 
 
