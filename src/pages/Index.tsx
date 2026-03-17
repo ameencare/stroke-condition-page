@@ -5,9 +5,6 @@ import HeroSection from "@/components/HeroSection";
 import StrokeDefinitionSection from "@/components/StrokeDefinitionSection";
 import PhysiotherapyRoleSection from "@/components/PhysiotherapyRoleSection";
 import HomeRehabSection from "@/components/HomeRehabSection";
-import FAQSection from "@/components/FAQSection";
-import TrustSection from "@/components/TrustSection";
-import CTASection from "@/components/CTASection";
 
 const Index = () => {
   return (
@@ -19,9 +16,6 @@ const Index = () => {
       <StrokeDefinitionSection />
       <PhysiotherapyRoleSection />
       <HomeRehabSection />
-      <FAQSection />
-      <TrustSection />
-      <CTASection />
     </div>
   );
 };
