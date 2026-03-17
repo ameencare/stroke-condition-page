@@ -7,7 +7,7 @@ const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-primary">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-primary pt-16">
       <div className="absolute inset-0">
         <img src={heroImage} alt="إعادة التأهيل بعد الجلطة" className="h-full w-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-primary/80" />
