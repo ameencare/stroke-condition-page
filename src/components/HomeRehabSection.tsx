@@ -4,8 +4,8 @@ import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, Message
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
 const assessmentItems = [
-"القوة العضلية والمدى الحركي للمفاصل",
-"الحركة الوظيفية مثل (الجلوس، الوقوف والمشي) والتوازن",
+"القوة العضلية والحركة الوظيفية",
+"مدى الحركة للمفاصل والتوازن",
 "الإحساس والتحكم الحركي"];
 
 
@@ -40,7 +40,7 @@ const HomeRehabSection = () => {
           <h3 className="text-xl font-bold text-foreground mb-4 text-right">
             ابدأ رحلة التعافي مع العلاج الطبيعي
           </h3>
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">في جلسة الفحص والعلاج الطبيعي مع رعاية أمين، يقوم الأخصائي بتقييم شامل بعد الجلطة الدماغية، يشمل:
+          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">في رعاية أمين، يبدأ العلاج الطبيعي بـجلسة الفحص والعلاج الطبيعي، يقوم الأخصائي بتقييم شامل بعد الجلطة الدماغية، يشمل:
 
           </p>
 
@@ -56,7 +56,7 @@ const HomeRehabSection = () => {
           </div>
 
           <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">ثم يقدم العلاج الطبيعي كجزء من الجلسة، ويناقش حالتك الصحية ليضع خطة علاجية مخصصة وأهداف واضحة، مع تحديد عدد الجلسات والطُرق الأنسب لدعم تعافيك وتحسين حياتك اليومية.
-
+والتصنيف الموصى به هو أخصائي عالي الخبرة أو خبير، لأنها الأنسب لحالات الجلطة لتطلبها خبرة أعمق، بينما التقييم يساعد على وضع خطة علاجية دقيقة.
           </p>
 
           <div className="rounded-2xl bg-secondary/10 p-5 mb-8">

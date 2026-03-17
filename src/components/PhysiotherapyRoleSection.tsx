@@ -60,9 +60,9 @@ const PhysiotherapyRoleSection = () => {
           className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
           style={{ boxShadow: 'var(--shadow-card)' }}>
           
-          <p className="text-lg leading-relaxed text-muted-foreground text-right">في أمين، يركز العلاج الطبيعي على تقييم المشاكل الحركية والآلام الجسدية والتصنيف الموصى به هو أخصائي عالي الخبرة أو خبير، لأن هي الأنسب لحالات الجلطة لتطلبها خبرة أعمق، بينما التقييم يساعد على وضع خطة علاجية دقيقة.
+          <p className="text-lg leading-relaxed text-muted-foreground text-right">وتشير الدراسات إلى أن برامج التأهيل تساعد المرضى على إعادة تعلم المهارات التي تأثرت بسبب الجلطة وتحسين جودة حياتهم بشكل ملحوظ (CMRC)
 
-          </p>
+، يركز العلاج الطبيعي على تقييم المشاكل الحركية والآلام الجسدية والتصنيف الموصى به هو أخصائي عالي الخبرة أو خبير، لأن هي الأنسب لحالات الجلطة لتطلبها خبرة أعمق، بينما التقييم يساعد على وضع خطة علاجية دقيقة.</p>
         </motion.div>
       </div>
     </section>);
