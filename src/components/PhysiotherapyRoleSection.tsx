@@ -60,9 +60,9 @@ const PhysiotherapyRoleSection = () => {
           className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
           style={{ boxShadow: 'var(--shadow-card)' }}>
           
-          <p className="text-lg leading-relaxed text-muted-foreground text-right">وتشير الدراسات إلى أن برامج التأهيل تساعد المرضى على إعادة تعلم المهارات التي تأثرت بسبب الجلطة وتحسين جودة حياتهم بشكل ملحوظ،
-          <br /><br />
-          وأثبتت بأن التأهيل المنزلي فعال لأن المريض يتدرب في بيئته الطبيعية مما يسهل نقل المهارات المكتسبة</p>
+          <p className="text-lg leading-relaxed text-muted-foreground text-right">وتشير الدراسات إلى أن برامج التأهيل تساعد المرضى على إعادة تعلم المهارات التي تأثرت بسبب الجلطة وتحسين جودة حياتهم بشكل ملحوظ، وأثبتت بأن التأهيل المنزلي فعال لأن المريض يتدرب في بيئته الطبيعية مما يسهل نقل المهارات المكتسبة
+
+          </p>
         </motion.div>
       </div>
     </section>);
