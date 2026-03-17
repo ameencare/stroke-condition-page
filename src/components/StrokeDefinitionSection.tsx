@@ -65,8 +65,8 @@ const StrokeDefinitionSection = () => {
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
               <Clock className="h-5 w-5 text-primary" />
             </div>
-            <p className="text-sm font-medium text-foreground">
-              فترة التعافي قد تتراوح بين 3 إلى 6 أشهر، وقد تمتد أحيانًا لفترة أطول حسب الحالة.
+            <p className="text-sm font-medium text-foreground">فترة التعافي قد تتراوح بين 3 إلى 6 أشهر، وقد تمتد أحيانًا لفترة أطول حسب شدة الحالة والتزام المريض بالعلاج.
+
             </p>
           </div>
         </motion.div>
