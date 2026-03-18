@@ -16,28 +16,28 @@ const assessmentItems = [
 const journeySteps = [
   {
     step: "١",
-    title: "جلسة فحص",
+    title: "جلسة فحص وعلاج",
     description: "يقوم الأخصائي بتقييم شامل لحالتك الصحية بعد الجلطة",
     image: journeyAssessment,
     alt: "أخصائي يقيّم حالة المريض في المنزل",
   },
   {
     step: "٢",
-    title: "خطة علاج",
+    title: "الخطة العلاجية",
     description: "وضع خطة علاجية مخصصة وأهداف واضحة بالتشاور معك ومع عائلتك",
     image: journeyPlan,
     alt: "أخصائي يشرح خطة العلاج للمريض وعائلته",
   },
   {
     step: "٣",
-    title: "جلسات علاج",
+    title: "الجلسات العلاجية",
     description: "جلسات علاج طبيعي منتظمة في منزلك مع متابعة مستمرة",
     image: journeyTherapy,
     alt: "جلسة علاج طبيعي نشطة في المنزل",
   },
   {
     step: "٤",
-    title: "تحسن تدريجي",
+    title: "التحسن التدريجي",
     description: "استعادة الحركة والاستقلالية بشكل تدريجي وملحوظ",
     image: journeyRecovery,
     alt: "مريض يمشي باستقلالية بعد التأهيل",
