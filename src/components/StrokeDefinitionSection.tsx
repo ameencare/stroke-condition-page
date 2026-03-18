@@ -22,7 +22,7 @@ const StrokeDefinitionSection = () => {
           className="mx-auto max-w-3xl text-center mb-10">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
             <Brain className="h-4 w-4" />
-            تعريف المشكلة
+            تعريف الحالة
           </div>
           <h2 className="mb-3 text-3xl font-bold leading-snug tracking-tight text-foreground md:text-4xl">
             ما هي الجلطة الدماغية؟
