@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, MessageCircle, HeartHandshake, Clock } from "lucide-react";
+import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, MessageCircle, HeartHandshake } from "lucide-react";
 import journeyAssessment from "@/assets/journey-assessment.jpg";
 import journeyPlan from "@/assets/journey-plan.jpg";
 import journeyTherapy from "@/assets/journey-therapy.jpg";
