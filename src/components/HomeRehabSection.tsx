@@ -81,7 +81,7 @@ const HomeRehabSection = () => {
                 <img
                   src={step.image}
                   alt={step.alt}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 ${step.step === "٢" ? "object-[60%_center] scale-110" : ""}`} />
                 <div className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-sm shadow-lg">
                   {step.step}
                 </div>
