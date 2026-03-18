@@ -22,7 +22,7 @@ const StrokeDefinitionSection = () => {
           className="mx-auto max-w-3xl text-center mb-10">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
             <Brain className="h-4 w-4" />
-            تعريف المشكلة
+            تعريف الحالة
           </div>
           <h2 className="mb-3 text-3xl font-bold leading-snug tracking-tight text-foreground md:text-4xl">
             ما هي الجلطة الدماغية؟
@@ -39,8 +39,7 @@ const StrokeDefinitionSection = () => {
             style={{ boxShadow: 'var(--shadow-card)' }}>
             
             <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">
-              هي حالة يحدث فيها انقطاع في تدفق الدم الى جزء من الدماغ، نتيجة انسداد أو تمزق في أحد الشرايين، وتعد الأكثر شيوعًا لدى كبار السن. وعادةً بعد الجلطة الدماغية قد يفقد المريض جزءًا من الحركة أو التوازن أو أداء الأنشطة اليومية،
-              وتشير إرشادات وزارة الصحة إلى أهمية بدء التأهيل خلال 24–48 ساعة بعد استقرار الحالة، مع وضع خطة علاجية فردية يتم متابعتها بشكل مستمر من فريق متخصص.
+              هي حالة يحدث فيها انقطاع في تدفق الدم الى جزء من الدماغ، نتيجة انسداد أو تمزق في أحد الشرايين، وتعد الأكثر شيوعًا لدى كبار السن. وعادةً بعد الجلطة الدماغية قد يفقد المريض جزءًا من الحركة أو التوازن أو أداء الأنشطة اليومية، ومن عوامل الخطر التي قد تزيد من احتمالية حدوثها، بعضها لا يمكن تغييره وبعضها قابل للتحكم لتقليل احتمالية الاصابة. من العوامل التي لا يمكن تغييرها: التقدم في العمر والتاريخ العائلي للإصابة بأمراض القلب أو السكتة الدماغية. أما العوامل الصحية القابلة للتحكم فتشمل ارتفاع ضغط الدم، السكري، ارتفاع الكوليسترول، وأمراض القلب مثل الرجفان الأذيني. بالإضافة إلى ذلك، يلعب نمط الحياة دورًا مهمًا في زيادة الخطر، مثل التدخين، السمنة، قلة النشاط البدني، والإفراط في تناول الكحول أو المخدرات.
             </p>
 
             <p className="text-base font-semibold text-foreground text-right mb-4">من أبرز آثار الجلطة:</p>
@@ -61,18 +60,6 @@ const StrokeDefinitionSection = () => {
               ))}
             </div>
 
-            <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
-              عادةً يحتاج المريض إلى برنامج تأهيلي شامل، يشمل العلاج الطبيعي لاستعادة الحركة وتحسين القدرة على الانتقال بأمان، بالإضافة إلى تثقيف المريض حول سلامته.
-            </p>
-
-            <div className="flex items-center gap-3 rounded-2xl bg-primary/5 p-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                <Clock className="h-5 w-5 text-primary" />
-              </div>
-              <p className="text-sm font-medium text-foreground">
-                فترة التعافي قد تختلف من مريض لآخر وتتراوح مابين 3 إلى 6 أشهر، وقد تمتد أحيانًا لفترة أطول حسب شدة الحالة والتزام المريض بالعلاج.
-              </p>
-            </div>
           </motion.div>
 
           <motion.div

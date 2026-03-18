@@ -23,7 +23,7 @@ const PhysiotherapyRoleSection = () => {
           className="mb-10 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-sm font-semibold text-secondary">
             <Star className="h-4 w-4" />
-            التعامل مع المشكلة
+            رحلتك الى العلاج
           </div>
           <h2 className="mb-3 text-3xl font-bold leading-snug tracking-tight text-foreground md:text-4xl">
             كيف يساعد العلاج الطبيعي؟
@@ -61,9 +61,9 @@ const PhysiotherapyRoleSection = () => {
           <div className="grid md:grid-cols-[1fr_300px]">
             <div className="p-8 md:p-10 flex items-center">
               <p className="text-lg leading-relaxed text-muted-foreground text-right">
-                وتشير الدراسات إلى أن برامج التأهيل تساعد المرضى على إعادة تعلم المهارات التي تأثرت بسبب الجلطة وتحسين جودة حياتهم بشكل ملحوظ,
+                برامج التأهيل تساعد المرضى على استعادة المهارات المتأثرة بالجلطة وتحسين جودة حياتهم بشكل ملحوظ.
                 <br /><br />
-                وأثبتت بأن التأهيل المنزلي فعال لأن المريض يتدرب في بيئته الطبيعية مما يسهل نقل المهارات المكتسبة
+                ويعتبر التأهيل المنزلي فعالًا، حيث يتيح للمريض التدريب في بيئته الطبيعية، مما يسهل تطبيق المهارات المكتسبة في حياته اليومية.
               </p>
             </div>
             <div className="hidden md:block">
