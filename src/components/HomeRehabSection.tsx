@@ -16,7 +16,7 @@ const assessmentItems = [
 const journeySteps = [
   {
     step: "١",
-    title: "جلسة فحص وعلاج",
+    title: "جلسة الفحص والعلاج الطبيعي",
     description: "يقوم الأخصائي بتقييم شامل لحالتك الصحية بعد الجلطة",
     image: journeyAssessment,
     alt: "أخصائي يقيّم حالة المريض في المنزل",
