@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, MessageCircle, HeartHandshake, Clock } from "lucide-react";
+import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, MessageCircle, HeartHandshake } from "lucide-react";
 import journeyAssessment from "@/assets/journey-assessment.jpg";
 import journeyPlan from "@/assets/journey-plan.jpg";
 import journeyTherapy from "@/assets/journey-therapy.jpg";
@@ -103,21 +103,7 @@ const HomeRehabSection = () => {
           className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
           style={{ boxShadow: 'var(--shadow-card)' }}>
           
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
-            وتشير إرشادات وزارة الصحة إلى أهمية بدء التأهيل خلال 24–48 ساعة بعد استقرار الحالة، مع وضع خطة علاجية فردية يتم متابعتها بشكل مستمر من فريق متخصص.
-          </p>
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
-            عادةً يحتاج المريض إلى برنامج تأهيلي شامل، يشمل العلاج الطبيعي لاستعادة الحركة وتحسين القدرة على الانتقال بأمان، بالإضافة إلى تثقيف المريض حول سلامته.
-          </p>
-          <div className="flex items-center gap-3 rounded-2xl bg-primary/5 p-4 mb-6">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-              <Clock className="h-5 w-5 text-primary" />
-            </div>
-            <p className="text-sm font-medium text-foreground">
-              العلاج الطبيعي خطوة أساسية بعد السكتة الدماغية، ويُنصح بالبدء المبكر بعد استقرار حالة المريض مع جلسات يومية تقريبًا 5 أيام في الأسبوع في المرحلة المبكرة. 
-              فترة التعافي تختلف من مريض لآخر، وعادةً تتراوح بين 3 إلى 6 أشهر، وقد تمتد لفترة أطول حسب شدة الحالة والتزام المريض بالعلاج. غالبًا يظهر التحسن الأكبر خلال أول 3 أشهر، بينما قد يستمر التحسن بعد ذلك ولكن بمعدل أبطأ.
-            </p>
-          </div>
+          
           <h3 className="text-xl font-bold text-foreground mb-4 text-right">
             ابدأ رحلة التعافي مع العلاج الطبيعي
           </h3>
