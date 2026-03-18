@@ -23,7 +23,7 @@ const PhysiotherapyRoleSection = () => {
           className="mb-10 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-sm font-semibold text-secondary">
             <Star className="h-4 w-4" />
-            التعامل مع المشكلة
+            رحلتك الى العلاج
           </div>
           <h2 className="mb-3 text-3xl font-bold leading-snug tracking-tight text-foreground md:text-4xl">
             كيف يساعد العلاج الطبيعي؟
