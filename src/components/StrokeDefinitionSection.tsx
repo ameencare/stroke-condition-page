@@ -60,18 +60,6 @@ const StrokeDefinitionSection = () => {
               ))}
             </div>
 
-            <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
-              عادةً يحتاج المريض إلى برنامج تأهيلي شامل، يشمل العلاج الطبيعي لاستعادة الحركة وتحسين القدرة على الانتقال بأمان، بالإضافة إلى تثقيف المريض حول سلامته.
-            </p>
-
-            <div className="flex items-center gap-3 rounded-2xl bg-primary/5 p-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                <Clock className="h-5 w-5 text-primary" />
-              </div>
-              <p className="text-sm font-medium text-foreground">
-                فترة التعافي قد تختلف من مريض لآخر وتتراوح مابين 3 إلى 6 أشهر، وقد تمتد أحيانًا لفترة أطول حسب شدة الحالة والتزام المريض بالعلاج.
-              </p>
-            </div>
           </motion.div>
 
           <motion.div
