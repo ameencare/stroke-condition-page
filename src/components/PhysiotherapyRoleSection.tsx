@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bike, Dumbbell, ArrowUp, Footprints, Star } from "lucide-react";
+import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock } from "lucide-react";
 import benefitsImage from "@/assets/benefits-exercises.jpg";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
