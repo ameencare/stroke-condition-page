@@ -13,7 +13,7 @@ const benefits = [
 
 const journeyStages = [
   {
-    step: 2,
+    step: 1,
     icon: Brain,
     title: "النافذة الذهبية",
     timeLabel: "24 – 48 ساعة",
@@ -23,7 +23,7 @@ const journeyStages = [
     points: ["بدء التأهيل", "تقييم شامل", "حركة بسيطة"],
   },
   {
-    step: 3,
+    step: 2,
     icon: CalendarCheck,
     title: "التأهيل المبكر",
     timeLabel: "أيام – أسابيع",
@@ -33,7 +33,7 @@ const journeyStages = [
     points: ["علاج يومي", "تقوية وحركة", "زيادة تدريجية"],
   },
   {
-    step: 4,
+    step: 3,
     icon: TrendingUp,
     title: "التعافي الأقصى",
     timeLabel: "أول 3 أشهر",
@@ -43,7 +43,7 @@ const journeyStages = [
     points: ["تحسن ملحوظ", "علاج مكثف", "استقلالية أكبر"],
   },
   {
-    step: 5,
+    step: 4,
     icon: Activity,
     title: "التعافي المستمر",
     timeLabel: "3 – 6+ أشهر",
