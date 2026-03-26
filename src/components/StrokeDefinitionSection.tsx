@@ -100,30 +100,58 @@ const StrokeDefinitionSection = () => {
             </div>
 
             {/* Risk Factors - Categorized */}
-            <p className="text-base font-semibold text-foreground text-right mb-5">عوامل الخطر:</p>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="flex items-center gap-2.5 mb-6">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                <AlertTriangle className="h-5 w-5 text-primary" />
+              </div>
+              <p className="text-lg font-bold text-foreground">عوامل الخطر</p>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-3">
               {riskCategories.map((cat, ci) => {
                 const colors = colorMap[cat.color];
                 return (
                   <motion.div
                     key={ci}
-                    initial={{ opacity: 0, y: 12 }}
+                    initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.2 + ci * 0.1, ease }}
-                    className={`rounded-2xl ${colors.bg} p-5`}>
-                    <div className="flex items-center gap-2.5 mb-4">
-                      <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${colors.iconBg}`}>
-                        <cat.icon className={`h-4.5 w-4.5 ${colors.text}`} />
+                    transition={{ duration: 0.45, delay: 0.2 + ci * 0.1, ease }}
+                    className={`relative rounded-2xl ${colors.bg} p-5 border border-transparent hover:border-current/5 transition-all duration-300 overflow-hidden`}>
+                    {/* Decorative accent line */}
+                    <div className={`absolute top-0 right-0 left-0 h-1 ${colors.dot} rounded-t-2xl`} />
+
+                    <div className="flex items-center gap-3 mb-5 pt-1">
+                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${colors.iconBg} shadow-sm`}>
+                        <cat.icon className={`h-5 w-5 ${colors.text}`} />
                       </div>
-                      <h4 className="text-sm font-bold text-foreground">{cat.title}</h4>
+                      <div>
+                        <h4 className="text-sm font-bold text-foreground leading-tight">{cat.title}</h4>
+                        <span className={`text-[11px] font-medium ${colors.text} opacity-70`}>
+                          {cat.items.length} عوامل
+                        </span>
+                      </div>
                     </div>
-                    <ul className="space-y-2.5">
+
+                    <ul className="space-y-3">
                       {cat.items.map((item, ii) => (
-                        <li key={ii} className="flex items-start gap-2 text-right">
-                          <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${colors.dot}`} />
-                          <span className="text-sm text-muted-foreground leading-relaxed">{item.text}</span>
-                        </li>
+                        <motion.li
+                          key={ii}
+                          initial={{ opacity: 0, x: -6 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: 0.3 + ci * 0.1 + ii * 0.06, ease }}
+                          className={`flex items-center gap-2.5 rounded-xl ${colors.iconBg} px-3 py-2.5 transition-all duration-200 hover:scale-[1.02]`}>
+                          <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg ${colors.dot}`}>
+                            <span className="block h-2 w-2 rounded-full bg-white" />
+                          </span>
+                          <span className="text-sm text-foreground leading-snug">
+                            <span className="font-bold">{item.bold}</span>
+                            {item.text !== item.bold && (
+                              <span className="text-muted-foreground font-normal"> — {item.text.replace(item.bold, '').trim()}</span>
+                            )}
+                          </span>
+                        </motion.li>
                       ))}
                     </ul>
                   </motion.div>
