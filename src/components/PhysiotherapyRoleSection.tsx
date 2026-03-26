@@ -205,7 +205,7 @@ const PhysiotherapyRoleSection = () => {
                       <div
                         className={`rounded-2xl p-4 transition-all duration-300 hover:-translate-y-0.5 ${
                           isGolden
-                            ? "bg-golden/[0.08] border border-golden/25 shadow-[0_4px_24px_-8px_hsl(var(--golden)/0.2)]"
+                            ? "bg-golden border border-golden shadow-[0_4px_24px_-8px_hsl(var(--golden)/0.35)]"
                             : isHighlight
                               ? "bg-primary/[0.06] border border-primary/20 shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.15)]"
                               : "bg-card"
@@ -216,7 +216,7 @@ const PhysiotherapyRoleSection = () => {
                         <div className="flex flex-wrap items-center justify-center gap-1.5 mb-2">
                           <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${
                             isGolden
-                              ? "bg-golden text-golden-foreground"
+                              ? "bg-white/25 text-golden-foreground"
                               : isHighlight
                                 ? "bg-primary text-primary-foreground"
                                 : "bg-muted text-muted-foreground"
@@ -227,7 +227,7 @@ const PhysiotherapyRoleSection = () => {
                           {(isHighlight || isGolden) && (
                             <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${
                               isGolden
-                                ? "bg-golden/15 text-golden"
+                                ? "bg-white/20 text-golden-foreground"
                                 : "bg-secondary/15 text-secondary"
                             }`}>
                               <Sparkles className="h-3 w-3" />
@@ -237,7 +237,7 @@ const PhysiotherapyRoleSection = () => {
                         </div>
 
                         <h4 className={`text-sm font-bold mb-2 text-center ${
-                          isGolden ? "text-golden" : isHighlight ? "text-primary" : "text-foreground"
+                          isGolden ? "text-golden-foreground" : isHighlight ? "text-primary" : "text-foreground"
                         }`}>
                           {stage.title}
                         </h4>
@@ -252,9 +252,9 @@ const PhysiotherapyRoleSection = () => {
                           {stage.points.map((point, pi) => (
                             <li key={pi} className="flex items-start gap-1.5 text-right">
                               <ChevronLeft className={`mt-0.5 h-3 w-3 shrink-0 ${
-                                isGolden ? "text-golden/60" : isHighlight ? "text-primary/60" : "text-secondary/50"
+                                isGolden ? "text-golden-foreground/60" : isHighlight ? "text-primary/60" : "text-secondary/50"
                               }`} />
-                              <span className="text-xs leading-relaxed text-muted-foreground">{point}</span>
+                              <span className={`text-xs leading-relaxed ${isGolden ? "text-golden-foreground/90" : "text-muted-foreground"}`}>{point}</span>
                             </li>
                           ))}
                         </ul>
