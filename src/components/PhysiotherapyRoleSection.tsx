@@ -177,6 +177,7 @@ const PhysiotherapyRoleSection = () => {
 
               {journeyStages.map((stage, i) => {
                 const isHighlight = stage.highlight;
+                const isGolden = 'golden' in stage && stage.golden;
                 return (
                   <motion.div
                     key={stage.step}
@@ -190,9 +191,11 @@ const PhysiotherapyRoleSection = () => {
                     {/* Node */}
                     <div
                       className={`flex h-12 w-12 items-center justify-center rounded-full border-[3px] transition-all duration-300 ${
-                        isHighlight
-                          ? "border-primary bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.35)]"
-                          : "border-border bg-card text-primary"
+                        isGolden
+                          ? "border-golden bg-golden text-golden-foreground shadow-[0_0_20px_hsl(var(--golden)/0.4)]"
+                          : isHighlight
+                            ? "border-primary bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.35)]"
+                            : "border-border bg-card text-primary"
                       }`}>
                       <stage.icon className="h-5 w-5" />
                     </div>
@@ -201,24 +204,32 @@ const PhysiotherapyRoleSection = () => {
                     <div className="mt-4 w-full">
                       <div
                         className={`rounded-2xl p-4 transition-all duration-300 hover:-translate-y-0.5 ${
-                          isHighlight
-                            ? "bg-primary/[0.06] border border-primary/20 shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.15)]"
-                            : "bg-card"
+                          isGolden
+                            ? "bg-golden/[0.08] border border-golden/25 shadow-[0_4px_24px_-8px_hsl(var(--golden)/0.2)]"
+                            : isHighlight
+                              ? "bg-primary/[0.06] border border-primary/20 shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.15)]"
+                              : "bg-card"
                         }`}
-                        style={!isHighlight ? { boxShadow: 'var(--shadow-card)' } : undefined}>
+                        style={!isHighlight && !isGolden ? { boxShadow: 'var(--shadow-card)' } : undefined}>
 
                         {/* Time label + milestone */}
                         <div className="flex flex-wrap items-center justify-center gap-1.5 mb-2">
                           <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${
-                            isHighlight
-                              ? "bg-primary text-primary-foreground"
-                              : "bg-muted text-muted-foreground"
+                            isGolden
+                              ? "bg-golden text-golden-foreground"
+                              : isHighlight
+                                ? "bg-primary text-primary-foreground"
+                                : "bg-muted text-muted-foreground"
                           }`}>
                             <Clock className="h-3 w-3" />
                             {stage.timeLabel}
                           </span>
-                          {isHighlight && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-secondary/15 px-2 py-0.5 text-[11px] font-bold text-secondary">
+                          {(isHighlight || isGolden) && (
+                            <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${
+                              isGolden
+                                ? "bg-golden/15 text-golden"
+                                : "bg-secondary/15 text-secondary"
+                            }`}>
                               <Sparkles className="h-3 w-3" />
                               {stage.milestone}
                             </span>
@@ -226,12 +237,12 @@ const PhysiotherapyRoleSection = () => {
                         </div>
 
                         <h4 className={`text-sm font-bold mb-2 text-center ${
-                          isHighlight ? "text-primary" : "text-foreground"
+                          isGolden ? "text-golden" : isHighlight ? "text-primary" : "text-foreground"
                         }`}>
                           {stage.title}
                         </h4>
 
-                        {!isHighlight && (
+                        {!isHighlight && !isGolden && (
                           <p className="text-[11px] text-muted-foreground/70 font-medium text-center mb-2">
                             {stage.milestone}
                           </p>
@@ -241,7 +252,7 @@ const PhysiotherapyRoleSection = () => {
                           {stage.points.map((point, pi) => (
                             <li key={pi} className="flex items-start gap-1.5 text-right">
                               <ChevronLeft className={`mt-0.5 h-3 w-3 shrink-0 ${
-                                isHighlight ? "text-primary/60" : "text-secondary/50"
+                                isGolden ? "text-golden/60" : isHighlight ? "text-primary/60" : "text-secondary/50"
                               }`} />
                               <span className="text-xs leading-relaxed text-muted-foreground">{point}</span>
                             </li>
