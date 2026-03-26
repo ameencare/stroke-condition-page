@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock, Zap, TrendingUp, CalendarCheck, Brain, Activity, Sparkles } from "lucide-react";
+import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock, TrendingUp, CalendarCheck, Brain, Activity, Sparkles } from "lucide-react";
 import benefitsImage from "@/assets/benefits-exercises.jpg";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
@@ -14,16 +14,6 @@ const benefits = [
 const journeyStages = [
   {
     step: 1,
-    icon: Zap,
-    title: "المرحلة الحادة",
-    timeLabel: "0 – 24 ساعة",
-    highlight: false,
-    label: "ابدأ مبكرًا",
-    color: "muted-foreground" as const,
-    points: ["رعاية طارئة", "حماية الدماغ", "تدخل فوري"],
-  },
-  {
-    step: 2,
     icon: Brain,
     title: "النافذة الذهبية",
     timeLabel: "24 – 48 ساعة",
@@ -33,7 +23,7 @@ const journeyStages = [
     points: ["بدء التأهيل", "تقييم شامل", "حركة بسيطة"],
   },
   {
-    step: 3,
+    step: 2,
     icon: CalendarCheck,
     title: "التأهيل المبكر",
     timeLabel: "أيام – أسابيع",
@@ -43,7 +33,7 @@ const journeyStages = [
     points: ["علاج يومي", "تقوية وحركة", "زيادة تدريجية"],
   },
   {
-    step: 4,
+    step: 3,
     icon: TrendingUp,
     title: "التعافي الأقصى",
     timeLabel: "أول 3 أشهر",
@@ -53,7 +43,7 @@ const journeyStages = [
     points: ["تحسن ملحوظ", "علاج مكثف", "استقلالية أكبر"],
   },
   {
-    step: 5,
+    step: 4,
     icon: Activity,
     title: "التعافي المستمر",
     timeLabel: "3 – 6+ أشهر",
@@ -161,7 +151,7 @@ const PhysiotherapyRoleSection = () => {
               {/* Connector line */}
               <div className="absolute top-[3.25rem] right-[10%] left-[10%] h-0.5 bg-gradient-to-l from-primary/40 via-secondary/30 to-primary/40 z-0" />
               
-              <div className="grid grid-cols-5 gap-3 relative z-10">
+              <div className="grid grid-cols-4 gap-3 relative z-10">
                 {journeyStages.map((stage, i) => {
                   const isHighlight = stage.highlight;
                   return (
