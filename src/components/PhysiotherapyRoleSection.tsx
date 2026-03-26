@@ -31,6 +31,7 @@ const journeyStages = [
     title: "النافذة الذهبية المبكرة",
     timeLabel: "24 – 48 ساعة",
     highlight: true,
+    golden: true,
     milestone: "الوقت الذهبي",
     points: [
       "بدء التأهيل فور الاستقرار",
