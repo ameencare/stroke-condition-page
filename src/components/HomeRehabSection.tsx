@@ -4,13 +4,45 @@ import journeyAssessment from "@/assets/journey-assessment.jpg";
 import journeyPlan from "@/assets/journey-plan.jpg";
 import journeyTherapy from "@/assets/journey-therapy.jpg";
 import journeyRecovery from "@/assets/journey-recovery.jpg";
+import assessStrength from "@/assets/assess-strength.jpg";
+import assessFunctional from "@/assets/assess-functional.jpg";
+import assessRom from "@/assets/assess-rom.jpg";
+import assessBalance from "@/assets/assess-balance.jpg";
+import assessSensation from "@/assets/assess-sensation.jpg";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
-const assessmentItems = [
-  "القوة العضلية والحركة الوظيفية",
-  "مدى الحركة للمفاصل والتوازن",
-  "الإحساس والتحكم الحركي",
+const assessmentCards = [
+  {
+    title: "القوة العضلية",
+    subtitle: "تمارين المقاومة",
+    image: assessStrength,
+    alt: "تقييم قوة العضلات",
+  },
+  {
+    title: "الحركة الوظيفية",
+    subtitle: "المشي والأنشطة اليومية",
+    image: assessFunctional,
+    alt: "تقييم الحركة الوظيفية",
+  },
+  {
+    title: "مدى الحركة",
+    subtitle: "حركة المفاصل",
+    image: assessRom,
+    alt: "تقييم مدى حركة المفاصل",
+  },
+  {
+    title: "التوازن",
+    subtitle: "تدريب الوقوف",
+    image: assessBalance,
+    alt: "تقييم التوازن",
+  },
+  {
+    title: "الإحساس والتحكم",
+    subtitle: "التنسيق الحركي",
+    image: assessSensation,
+    alt: "تقييم الإحساس والتحكم الحركي",
+  },
 ];
 
 const journeySteps = [
@@ -81,6 +113,7 @@ const HomeRehabSection = () => {
                 <img
                   src={step.image}
                   alt={step.alt}
+                  loading="lazy"
                   className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 ${step.step === "٢" ? "object-[60%_center] scale-110" : ""}`} />
                 <div className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-sm shadow-lg">
                   {step.step}
@@ -94,43 +127,64 @@ const HomeRehabSection = () => {
           ))}
         </div>
 
-        {/* Assessment Details Card */}
+        {/* Assessment Section with Image Cards */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1, ease }}
-          className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
-          style={{ boxShadow: 'var(--shadow-card)' }}>
-          
-          
-          <h3 className="text-xl font-bold text-foreground mb-4 text-right">
-            ابدأ رحلة التعافي مع العلاج الطبيعي
-          </h3>
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
-            في رعاية أمين، يبدأ العلاج الطبيعي بـجلسة الفحص والعلاج الطبيعي، يقوم الأخصائي بتقييم شامل بعد الجلطة الدماغية، يشمل:
-          </p>
+          className="mx-auto max-w-5xl">
 
-          <div className="space-y-3 mb-6">
-            {assessmentItems.map((item, i) => (
+          <div className="text-center mb-8">
+            <h3 className="text-xl font-bold text-foreground md:text-2xl mb-2">
+              التقييم الشامل يشمل
+            </h3>
+            <p className="text-base text-muted-foreground">
+              يقوم الأخصائي بفحص دقيق لتحديد خطة العلاج المناسبة
+            </p>
+          </div>
+
+          {/* Assessment Image Cards Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+            {assessmentCards.map((card, i) => (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                key={card.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.1 + i * 0.06, ease }}
-                className="flex items-center gap-3 rounded-2xl bg-primary/5 p-4 transition-all duration-200 hover:bg-primary/10">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <ClipboardCheck className="h-4 w-4 text-primary" />
+                transition={{ duration: 0.4, delay: i * 0.08, ease }}
+                className="group rounded-2xl bg-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-default"
+                style={{ boxShadow: 'var(--shadow-card)' }}>
+                <div className="relative h-32 sm:h-36 overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    loading="lazy"
+                    width={640}
+                    height={512}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
                 </div>
-                <p className="text-sm font-medium text-foreground">{item}</p>
+                <div className="p-3 text-center">
+                  <h4 className="text-sm font-bold text-foreground">{card.title}</h4>
+                  <p className="text-[11px] text-muted-foreground mt-0.5">{card.subtitle}</p>
+                </div>
               </motion.div>
             ))}
           </div>
+        </motion.div>
 
-          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">
-            ثم يقدم العلاج الطبيعي كجزء من الجلسة، ويناقش حالتك الصحية ليضع خطة علاجية مخصصة وأهداف واضحة، مع تحديد عدد الجلسات والطُرق الأنسب لدعم تعافيك وتحسين حياتك اليومية.
-            والتصنيف الموصى به هو أخصائي عالي الخبرة أو خبير، لأنها الأنسب لحالات الجلطة لتطلبها خبرة أعمق، بينما التقييم يساعد على وضع خطة علاجية دقيقة.
+        {/* Bottom CTA Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2, ease }}
+          className="mx-auto max-w-3xl rounded-3xl bg-card p-8 md:p-10"
+          style={{ boxShadow: 'var(--shadow-card)' }}>
+
+          <p className="text-lg leading-relaxed text-muted-foreground text-right mb-4">
+            في رعاية أمين، يبدأ العلاج الطبيعي بـجلسة الفحص والعلاج الطبيعي، يقوم الأخصائي بتقييم شامل بعد الجلطة الدماغية ثم يقدم العلاج كجزء من الجلسة، ويناقش حالتك ليضع خطة علاجية مخصصة.
           </p>
 
           <div className="rounded-2xl bg-secondary/10 p-5 mb-8">
