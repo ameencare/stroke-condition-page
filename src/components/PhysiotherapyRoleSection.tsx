@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock, Zap, Stethoscope, TrendingUp, CalendarCheck, Brain, BedDouble, Activity, Sparkles, ChevronLeft } from "lucide-react";
+import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock, Zap, Stethoscope, TrendingUp, CalendarCheck } from "lucide-react";
 import benefitsImage from "@/assets/benefits-exercises.jpg";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
@@ -11,73 +11,61 @@ const benefits = [
   { icon: Footprints, title: "إعادة تعلم المشي والأنشطة اليومية" },
 ];
 
-const journeyStages = [
+const timelinePhases = [
   {
-    step: 1,
+    phase: "١",
     icon: Zap,
-    title: "المرحلة الحادة",
-    timeLabel: "0 – 24 ساعة",
-    highlight: false,
-    milestone: "ابدأ مبكرًا",
+    title: "المرحلة المبكرة",
+    subtitle: "خلال 24–48 ساعة بعد الاستقرار",
+    color: "primary",
     points: [
-      "رعاية طارئة واستقرار الحالة",
-      "حماية الدماغ أمر بالغ الأهمية",
-      "تدخل طبي فوري",
+      "بدء التأهيل المبكر بعد استقرار الحالة",
+      "وضع خطة علاجية فردية مخصصة",
+      "متابعة من فريق طبي متخصص",
     ],
   },
   {
-    step: 2,
-    icon: Brain,
-    title: "النافذة الذهبية المبكرة",
-    timeLabel: "24 – 48 ساعة",
-    highlight: true,
-    milestone: "الوقت الذهبي",
-    points: [
-      "بدء التأهيل فور الاستقرار",
-      "تقييم أولي من فريق متعدد التخصصات",
-      "بدء الحركة البسيطة والوضعيات العلاجية",
-    ],
-  },
-  {
-    step: 3,
+    phase: "٢",
     icon: CalendarCheck,
-    title: "مرحلة التأهيل المبكر",
-    timeLabel: "أيام إلى أسابيع",
-    highlight: false,
-    milestone: "الاستمرارية مفتاح النجاح",
+    title: "مرحلة التأهيل",
+    subtitle: "جلسات يومية منتظمة",
+    color: "secondary",
     points: [
-      "علاج طبيعي يومي (~5 أيام/أسبوع)",
-      "التركيز على الحركة والقوة والوظائف الأساسية",
-      "زيادة تدريجية في النشاط",
+      "جلسات علاج طبيعي ~5 أيام/أسبوع",
+      "برنامج تأهيلي شامل للحركة والتوازن",
+      "تثقيف المريض حول السلامة",
     ],
   },
   {
-    step: 4,
+    phase: "٣",
     icon: TrendingUp,
-    title: "فترة التعافي الأقصى",
-    timeLabel: "أول 3 أشهر",
-    highlight: true,
-    milestone: "أقصى تحسّن",
+    title: "مرحلة التعافي",
+    subtitle: "3 إلى 6 أشهر",
+    color: "primary",
     points: [
-      "التحسن الأبرز يحدث في هذه الفترة",
-      "العلاج المكثف ومشاركة المريض هما المفتاح",
-      "نتائج ملموسة في الحركة والاستقلالية",
-    ],
-  },
-  {
-    step: 5,
-    icon: Activity,
-    title: "التعافي المستمر",
-    timeLabel: "3 – 6 أشهر وأكثر",
-    highlight: false,
-    milestone: "التعافي يحتاج صبرًا",
-    points: [
-      "استمرار التحسن بمعدل أبطأ",
-      "علاج طويل الأمد وتعديلات في نمط الحياة",
-      "التزام المريض عامل حاسم",
+      "التحسن الأكبر خلال أول 3 أشهر",
+      "استمرار التحسن بمعدل أبطأ بعد ذلك",
+      "فترة التعافي تختلف حسب شدة الحالة",
     ],
   },
 ];
+
+const phaseColors: Record<string, { badge: string; line: string; iconBg: string; iconText: string; dotBg: string }> = {
+  primary: {
+    badge: "bg-primary text-primary-foreground",
+    line: "bg-primary/20",
+    iconBg: "bg-primary/10",
+    iconText: "text-primary",
+    dotBg: "bg-primary/40",
+  },
+  secondary: {
+    badge: "bg-secondary text-secondary-foreground",
+    line: "bg-secondary/20",
+    iconBg: "bg-secondary/10",
+    iconText: "text-secondary",
+    dotBg: "bg-secondary/40",
+  },
+};
 
 const PhysiotherapyRoleSection = () => {
   return (
@@ -125,7 +113,7 @@ const PhysiotherapyRoleSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.2, ease }}
-          className="mx-auto max-w-4xl rounded-3xl bg-card overflow-hidden mb-16"
+          className="mx-auto max-w-4xl rounded-3xl bg-card overflow-hidden mb-12"
           style={{ boxShadow: 'var(--shadow-card)' }}>
           <div className="grid md:grid-cols-[1fr_300px]">
             <div className="p-8 md:p-10 flex items-center">
@@ -147,114 +135,57 @@ const PhysiotherapyRoleSection = () => {
           </div>
         </motion.div>
 
-        {/* Golden Time Journey Map */}
+        {/* Golden Time Timeline */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.3, ease }}
-          className="mx-auto max-w-4xl text-center mb-10">
+          className="mx-auto max-w-4xl text-center mb-8">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
             <Clock className="h-4 w-4" />
             الوقت الذهبي للتعافي
           </div>
-          <h3 className="text-2xl font-bold text-foreground md:text-3xl mb-2">
-            الوقت الذهبي للتعافي بعد الجلطة
-          </h3>
           <p className="mx-auto max-w-2xl text-base text-muted-foreground">
-            رحلة المريض من اللحظة الأولى إلى التعافي — كل مرحلة مهمة
+            إرشادات وزارة الصحة توصي بالبدء المبكر في التأهيل لتحقيق أفضل النتائج
           </p>
         </motion.div>
 
-        {/* Journey Map - Vertical Timeline */}
-        <div className="mx-auto max-w-3xl relative">
-          {/* Vertical line connector */}
-          <div className="absolute right-6 md:right-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-px" />
-
-          {journeyStages.map((stage, i) => {
-            const isHighlight = stage.highlight;
-            const isEven = i % 2 === 0;
-
+        <div className="mx-auto max-w-4xl grid gap-5 md:grid-cols-3">
+          {timelinePhases.map((phase, i) => {
+            const colors = phaseColors[phase.color];
             return (
               <motion.div
-                key={stage.step}
-                initial={{ opacity: 0, y: 25 }}
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease }}
-                className={`relative flex items-start gap-4 md:gap-0 mb-8 last:mb-0 ${
-                  isEven ? "md:flex-row-reverse" : "md:flex-row"
-                }`}>
-
-                {/* Timeline node */}
-                <div className="absolute right-[1.125rem] md:right-1/2 md:-translate-x-1/2 z-10 flex flex-col items-center">
-                  <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-full border-[3px] transition-all duration-300 ${
-                      isHighlight
-                        ? "border-primary bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.35)]"
-                        : "border-border bg-card text-primary"
-                    }`}>
-                    <stage.icon className="h-5 w-5" />
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + i * 0.12, ease }}
+                className="relative rounded-3xl bg-card p-6 md:p-7 transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: 'var(--shadow-card)' }}>
+                {/* Phase number badge */}
+                <div className={`absolute -top-3 right-6 flex h-7 min-w-[1.75rem] items-center justify-center rounded-full px-2 text-xs font-bold ${colors.badge}`}>
+                  المرحلة {phase.phase}
+                </div>
+                
+                <div className="flex items-center gap-3 mt-2 mb-4">
+                  <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${colors.iconBg}`}>
+                    <phase.icon className={`h-5 w-5 ${colors.iconText}`} />
+                  </div>
+                  <div className="text-right">
+                    <h3 className="text-base font-bold text-foreground">{phase.title}</h3>
+                    <p className="text-xs text-muted-foreground">{phase.subtitle}</p>
                   </div>
                 </div>
 
-                {/* Spacer for mobile (icon width) */}
-                <div className="w-12 shrink-0 md:hidden" />
-
-                {/* Content card */}
-                <div
-                  className={`flex-1 md:w-[calc(50%-2.5rem)] ${
-                    isEven ? "md:ml-auto md:pr-10" : "md:mr-auto md:pl-10"
-                  }`}>
-                  <div
-                    className={`rounded-2xl p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5 ${
-                      isHighlight
-                        ? "bg-primary/[0.06] border border-primary/20 shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.15)]"
-                        : "bg-card"
-                    }`}
-                    style={!isHighlight ? { boxShadow: 'var(--shadow-card)' } : undefined}>
-
-                    {/* Time label + milestone */}
-                    <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold ${
-                        isHighlight
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-muted-foreground"
-                      }`}>
-                        <Clock className="h-3 w-3" />
-                        {stage.timeLabel}
-                      </span>
-                      {isHighlight && (
-                        <span className="inline-flex items-center gap-1 rounded-full bg-secondary/15 px-2.5 py-1 text-xs font-bold text-secondary">
-                          <Sparkles className="h-3 w-3" />
-                          {stage.milestone}
-                        </span>
-                      )}
-                      {!isHighlight && (
-                        <span className="text-xs text-muted-foreground/70 font-medium">
-                          {stage.milestone}
-                        </span>
-                      )}
-                    </div>
-
-                    <h4 className={`text-lg font-bold mb-3 ${
-                      isHighlight ? "text-primary" : "text-foreground"
-                    }`}>
-                      {stage.title}
-                    </h4>
-
-                    <ul className="space-y-2">
-                      {stage.points.map((point, pi) => (
-                        <li key={pi} className="flex items-start gap-2 text-right">
-                          <ChevronLeft className={`mt-0.5 h-4 w-4 shrink-0 ${
-                            isHighlight ? "text-primary/60" : "text-secondary/50"
-                          }`} />
-                          <span className="text-sm leading-relaxed text-muted-foreground">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <ul className="space-y-2.5">
+                  {phase.points.map((point, pi) => (
+                    <li key={pi} className="flex items-start gap-2 text-right">
+                      <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${colors.dotBg}`} />
+                      <span className="text-sm leading-relaxed text-muted-foreground">{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             );
           })}
