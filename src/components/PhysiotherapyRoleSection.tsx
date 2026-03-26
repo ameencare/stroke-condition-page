@@ -151,7 +151,7 @@ const PhysiotherapyRoleSection = () => {
               {/* Connector line */}
               <div className="absolute top-[3.25rem] right-[10%] left-[10%] h-0.5 bg-gradient-to-l from-primary/40 via-secondary/30 to-primary/40 z-0" />
               
-              <div className="grid grid-cols-5 gap-3 relative z-10">
+              <div className="grid grid-cols-4 gap-3 relative z-10">
                 {journeyStages.map((stage, i) => {
                   const isHighlight = stage.highlight;
                   return (
