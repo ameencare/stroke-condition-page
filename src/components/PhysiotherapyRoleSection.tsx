@@ -13,16 +13,6 @@ const benefits = [
 
 const journeyStages = [
   {
-    step: 1,
-    icon: Zap,
-    title: "المرحلة الحادة",
-    timeLabel: "0 – 24 ساعة",
-    highlight: false,
-    label: "ابدأ مبكرًا",
-    color: "muted-foreground" as const,
-    points: ["رعاية طارئة", "حماية الدماغ", "تدخل فوري"],
-  },
-  {
     step: 2,
     icon: Brain,
     title: "النافذة الذهبية",
