@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock } from "lucide-react";
+import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock, Zap, Stethoscope, TrendingUp, CalendarCheck } from "lucide-react";
 import benefitsImage from "@/assets/benefits-exercises.jpg";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
@@ -10,6 +10,62 @@ const benefits = [
   { icon: ArrowUp, title: "تحسين التوازن وتقليل خطر السقوط" },
   { icon: Footprints, title: "إعادة تعلم المشي والأنشطة اليومية" },
 ];
+
+const timelinePhases = [
+  {
+    phase: "١",
+    icon: Zap,
+    title: "المرحلة المبكرة",
+    subtitle: "خلال 24–48 ساعة بعد الاستقرار",
+    color: "primary",
+    points: [
+      "بدء التأهيل المبكر بعد استقرار الحالة",
+      "وضع خطة علاجية فردية مخصصة",
+      "متابعة من فريق طبي متخصص",
+    ],
+  },
+  {
+    phase: "٢",
+    icon: CalendarCheck,
+    title: "مرحلة التأهيل",
+    subtitle: "جلسات يومية منتظمة",
+    color: "secondary",
+    points: [
+      "جلسات علاج طبيعي ~5 أيام/أسبوع",
+      "برنامج تأهيلي شامل للحركة والتوازن",
+      "تثقيف المريض حول السلامة",
+    ],
+  },
+  {
+    phase: "٣",
+    icon: TrendingUp,
+    title: "مرحلة التعافي",
+    subtitle: "3 إلى 6 أشهر",
+    color: "primary",
+    points: [
+      "التحسن الأكبر خلال أول 3 أشهر",
+      "استمرار التحسن بمعدل أبطأ بعد ذلك",
+      "فترة التعافي تختلف حسب شدة الحالة",
+    ],
+  },
+];
+
+const phaseColors: Record<string, { badge: string; line: string; iconBg: string; iconText: string; dotBg: string }> = {
+  primary: {
+    badge: "bg-primary text-primary-foreground",
+    line: "bg-primary/20",
+    iconBg: "bg-primary/10",
+    iconText: "text-primary",
+    dotBg: "bg-primary/40",
+  },
+  secondary: {
+    badge: "bg-secondary text-secondary-foreground",
+    line: "bg-secondary/20",
+    iconBg: "bg-secondary/10",
+    iconText: "text-secondary",
+    dotBg: "bg-secondary/40",
+  },
+};
 
 const PhysiotherapyRoleSection = () => {
   return (
@@ -51,12 +107,13 @@ const PhysiotherapyRoleSection = () => {
           ))}
         </div>
 
+        {/* Text content card */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.2, ease }}
-          className="mx-auto max-w-4xl rounded-3xl bg-card overflow-hidden"
+          className="mx-auto max-w-4xl rounded-3xl bg-card overflow-hidden mb-12"
           style={{ boxShadow: 'var(--shadow-card)' }}>
           <div className="grid md:grid-cols-[1fr_300px]">
             <div className="p-8 md:p-10 flex items-center">
@@ -64,24 +121,9 @@ const PhysiotherapyRoleSection = () => {
                 <p className="text-lg leading-relaxed text-muted-foreground mb-4">
                   برامج التأهيل تساعد المرضى على استعادة المهارات المتأثرة بالجلطة وتحسين جودة حياتهم بشكل ملحوظ.
                 </p>
-                <p className="text-lg leading-relaxed text-muted-foreground mb-4">
+                <p className="text-lg leading-relaxed text-muted-foreground">
                   ويعتبر التأهيل المنزلي فعالًا، حيث يتيح للمريض التدريب في بيئته الطبيعية، مما يسهل تطبيق المهارات المكتسبة في حياته اليومية.
                 </p>
-                <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-                  وتشير إرشادات وزارة الصحة إلى أهمية بدء التأهيل خلال 24–48 ساعة بعد استقرار الحالة، مع وضع خطة علاجية فردية يتم متابعتها بشكل مستمر من فريق متخصص.
-                </p>
-                <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-                  عادةً يحتاج المريض إلى برنامج تأهيلي شامل، يشمل العلاج الطبيعي لاستعادة الحركة وتحسين القدرة على الانتقال بأمان، بالإضافة إلى تثقيف المريض حول سلامته.
-                </p>
-                <div className="flex items-center gap-3 rounded-2xl bg-primary/5 p-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                    <Clock className="h-5 w-5 text-primary" />
-                  </div>
-                  <p className="text-sm font-medium text-foreground">
-                    العلاج الطبيعي خطوة أساسية بعد السكتة الدماغية، ويُنصح بالبدء المبكر بعد استقرار حالة المريض مع جلسات يومية تقريبًا 5 أيام في الأسبوع في المرحلة المبكرة. 
-                    فترة التعافي تختلف من مريض لآخر، وعادةً تتراوح بين 3 إلى 6 أشهر، وقد تمتد لفترة أطول حسب شدة الحالة والتزام المريض بالعلاج. غالبًا يظهر التحسن الأكبر خلال أول 3 أشهر، بينما قد يستمر التحسن بعد ذلك ولكن بمعدل أبطأ.
-                  </p>
-                </div>
               </div>
             </div>
             <div className="hidden md:block">
@@ -92,6 +134,62 @@ const PhysiotherapyRoleSection = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Golden Time Timeline */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.3, ease }}
+          className="mx-auto max-w-4xl text-center mb-8">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+            <Clock className="h-4 w-4" />
+            الوقت الذهبي للتعافي
+          </div>
+          <p className="mx-auto max-w-2xl text-base text-muted-foreground">
+            إرشادات وزارة الصحة توصي بالبدء المبكر في التأهيل لتحقيق أفضل النتائج
+          </p>
+        </motion.div>
+
+        <div className="mx-auto max-w-4xl grid gap-5 md:grid-cols-3">
+          {timelinePhases.map((phase, i) => {
+            const colors = phaseColors[phase.color];
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + i * 0.12, ease }}
+                className="relative rounded-3xl bg-card p-6 md:p-7 transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: 'var(--shadow-card)' }}>
+                {/* Phase number badge */}
+                <div className={`absolute -top-3 right-6 flex h-7 min-w-[1.75rem] items-center justify-center rounded-full px-2 text-xs font-bold ${colors.badge}`}>
+                  المرحلة {phase.phase}
+                </div>
+                
+                <div className="flex items-center gap-3 mt-2 mb-4">
+                  <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${colors.iconBg}`}>
+                    <phase.icon className={`h-5 w-5 ${colors.iconText}`} />
+                  </div>
+                  <div className="text-right">
+                    <h3 className="text-base font-bold text-foreground">{phase.title}</h3>
+                    <p className="text-xs text-muted-foreground">{phase.subtitle}</p>
+                  </div>
+                </div>
+
+                <ul className="space-y-2.5">
+                  {phase.points.map((point, pi) => (
+                    <li key={pi} className="flex items-start gap-2 text-right">
+                      <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${colors.dotBg}`} />
+                      <span className="text-sm leading-relaxed text-muted-foreground">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

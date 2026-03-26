@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, AlertTriangle, Footprints, Hand, Clock } from "lucide-react";
+import { Brain, AlertTriangle, Footprints, Hand, Heart, Dna, PersonStanding, Cigarette, Activity, Droplets, Clock as ClockIcon } from "lucide-react";
 import brainImage from "@/assets/brain-stroke-illustration.png";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
@@ -9,6 +9,45 @@ const effects = [
   { icon: Hand, text: "ضعف في حركة اليد أو الذراع" },
   { icon: Footprints, text: "صعوبة في المشي أو التوازن" },
 ];
+
+const riskCategories = [
+  {
+    title: "عوامل لا يمكن تغييرها",
+    icon: Dna,
+    color: "primary",
+    items: [
+      { text: "التقدم في العمر", bold: "العمر" },
+      { text: "التاريخ العائلي لأمراض القلب أو السكتة", bold: "التاريخ العائلي" },
+    ],
+  },
+  {
+    title: "عوامل صحية قابلة للتحكم",
+    icon: Heart,
+    color: "destructive",
+    items: [
+      { text: "ارتفاع ضغط الدم", bold: "ضغط الدم" },
+      { text: "مرض السكري", bold: "السكري" },
+      { text: "ارتفاع الكوليسترول", bold: "الكوليسترول" },
+      { text: "أمراض القلب مثل الرجفان الأذيني", bold: "أمراض القلب" },
+    ],
+  },
+  {
+    title: "عوامل نمط الحياة",
+    icon: PersonStanding,
+    color: "secondary",
+    items: [
+      { text: "التدخين", bold: "التدخين" },
+      { text: "السمنة وزيادة الوزن", bold: "السمنة" },
+      { text: "قلة النشاط البدني", bold: "النشاط البدني" },
+    ],
+  },
+];
+
+const colorMap: Record<string, { bg: string; iconBg: string; text: string; dot: string }> = {
+  primary: { bg: "bg-primary/5", iconBg: "bg-primary/10", text: "text-primary", dot: "bg-primary" },
+  destructive: { bg: "bg-destructive/5", iconBg: "bg-destructive/10", text: "text-destructive", dot: "bg-destructive" },
+  secondary: { bg: "bg-secondary/5", iconBg: "bg-secondary/10", text: "text-secondary", dot: "bg-secondary" },
+};
 
 const StrokeDefinitionSection = () => {
   return (
@@ -39,11 +78,11 @@ const StrokeDefinitionSection = () => {
             style={{ boxShadow: 'var(--shadow-card)' }}>
             
             <p className="text-lg leading-relaxed text-muted-foreground text-right mb-6">
-              هي حالة يحدث فيها انقطاع في تدفق الدم الى جزء من الدماغ، نتيجة انسداد أو تمزق في أحد الشرايين، وتعد الأكثر شيوعًا لدى كبار السن. وعادةً بعد الجلطة الدماغية قد يفقد المريض جزءًا من الحركة أو التوازن أو أداء الأنشطة اليومية، ومن عوامل الخطر التي قد تزيد من احتمالية حدوثها، بعضها لا يمكن تغييره وبعضها قابل للتحكم لتقليل احتمالية الاصابة. من العوامل التي لا يمكن تغييرها: التقدم في العمر والتاريخ العائلي للإصابة بأمراض القلب أو السكتة الدماغية. أما العوامل الصحية القابلة للتحكم فتشمل ارتفاع ضغط الدم، السكري، ارتفاع الكوليسترول، وأمراض القلب مثل الرجفان الأذيني. بالإضافة إلى ذلك، يلعب نمط الحياة دورًا مهمًا في زيادة الخطر، مثل التدخين، السمنة، قلة النشاط البدني، والإفراط في تناول الكحول أو المخدرات.
+              هي حالة يحدث فيها انقطاع في تدفق الدم الى جزء من الدماغ، نتيجة انسداد أو تمزق في أحد الشرايين، وتعد الأكثر شيوعًا لدى كبار السن. وعادةً بعد الجلطة الدماغية قد يفقد المريض جزءًا من الحركة أو التوازن أو أداء الأنشطة اليومية.
             </p>
 
             <p className="text-base font-semibold text-foreground text-right mb-4">من أبرز آثار الجلطة:</p>
-            <div className="grid gap-3 sm:grid-cols-1 mb-6">
+            <div className="grid gap-3 sm:grid-cols-1 mb-8">
               {effects.map((item, i) => (
                 <motion.div
                   key={i}
@@ -58,6 +97,38 @@ const StrokeDefinitionSection = () => {
                   <p className="text-sm font-medium text-foreground">{item.text}</p>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Risk Factors - Categorized */}
+            <p className="text-base font-semibold text-foreground text-right mb-5">عوامل الخطر:</p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {riskCategories.map((cat, ci) => {
+                const colors = colorMap[cat.color];
+                return (
+                  <motion.div
+                    key={ci}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.2 + ci * 0.1, ease }}
+                    className={`rounded-2xl ${colors.bg} p-5`}>
+                    <div className="flex items-center gap-2.5 mb-4">
+                      <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${colors.iconBg}`}>
+                        <cat.icon className={`h-4.5 w-4.5 ${colors.text}`} />
+                      </div>
+                      <h4 className="text-sm font-bold text-foreground">{cat.title}</h4>
+                    </div>
+                    <ul className="space-y-2.5">
+                      {cat.items.map((item, ii) => (
+                        <li key={ii} className="flex items-start gap-2 text-right">
+                          <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${colors.dot}`} />
+                          <span className="text-sm text-muted-foreground leading-relaxed">{item.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
             </div>
 
           </motion.div>
