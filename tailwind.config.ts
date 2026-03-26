@@ -51,10 +51,6 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         whatsapp: "hsl(var(--whatsapp))",
-        golden: {
-          DEFAULT: "hsl(var(--golden))",
-          foreground: "hsl(var(--golden-foreground))",
-        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

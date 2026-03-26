@@ -31,7 +31,6 @@ const journeyStages = [
     title: "النافذة الذهبية المبكرة",
     timeLabel: "24 – 48 ساعة",
     highlight: true,
-    golden: true,
     milestone: "الوقت الذهبي",
     points: [
       "بدء التأهيل فور الاستقرار",
@@ -167,104 +166,98 @@ const PhysiotherapyRoleSection = () => {
           </p>
         </motion.div>
 
-        {/* Journey Map - Horizontal Timeline */}
-        <div className="mx-auto max-w-5xl overflow-x-auto pb-4">
-          <div className="min-w-[800px] px-4">
-            {/* Horizontal connector line */}
-            <div className="relative flex items-start justify-between">
-              {/* The line behind the nodes */}
-              <div className="absolute top-6 left-6 right-6 h-0.5 bg-border z-0" />
+        {/* Journey Map - Vertical Timeline */}
+        <div className="mx-auto max-w-3xl relative">
+          {/* Vertical line connector */}
+          <div className="absolute right-6 md:right-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-px" />
 
-              {journeyStages.map((stage, i) => {
-                const isHighlight = stage.highlight;
-                const isGolden = 'golden' in stage && stage.golden;
-                return (
-                  <motion.div
-                    key={stage.step}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1, ease }}
-                    className="relative z-10 flex flex-col items-center"
-                    style={{ width: '20%' }}>
-                    
-                    {/* Node */}
-                    <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-full border-[3px] transition-all duration-300 ${
-                        isGolden
-                          ? "border-golden bg-golden text-golden-foreground shadow-[0_0_20px_hsl(var(--golden)/0.4)]"
-                          : isHighlight
-                            ? "border-primary bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.35)]"
-                            : "border-border bg-card text-primary"
+          {journeyStages.map((stage, i) => {
+            const isHighlight = stage.highlight;
+            const isEven = i % 2 === 0;
+
+            return (
+              <motion.div
+                key={stage.step}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease }}
+                className={`relative flex items-start gap-4 md:gap-0 mb-8 last:mb-0 ${
+                  isEven ? "md:flex-row-reverse" : "md:flex-row"
+                }`}>
+
+                {/* Timeline node */}
+                <div className="absolute right-[1.125rem] md:right-1/2 md:-translate-x-1/2 z-10 flex flex-col items-center">
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-full border-[3px] transition-all duration-300 ${
+                      isHighlight
+                        ? "border-primary bg-primary text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.35)]"
+                        : "border-border bg-card text-primary"
+                    }`}>
+                    <stage.icon className="h-5 w-5" />
+                  </div>
+                </div>
+
+                {/* Spacer for mobile (icon width) */}
+                <div className="w-12 shrink-0 md:hidden" />
+
+                {/* Content card */}
+                <div
+                  className={`flex-1 md:w-[calc(50%-2.5rem)] ${
+                    isEven ? "md:ml-auto md:pr-10" : "md:mr-auto md:pl-10"
+                  }`}>
+                  <div
+                    className={`rounded-2xl p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5 ${
+                      isHighlight
+                        ? "bg-primary/[0.06] border border-primary/20 shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.15)]"
+                        : "bg-card"
+                    }`}
+                    style={!isHighlight ? { boxShadow: 'var(--shadow-card)' } : undefined}>
+
+                    {/* Time label + milestone */}
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold ${
+                        isHighlight
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-muted text-muted-foreground"
                       }`}>
-                      <stage.icon className="h-5 w-5" />
+                        <Clock className="h-3 w-3" />
+                        {stage.timeLabel}
+                      </span>
+                      {isHighlight && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-secondary/15 px-2.5 py-1 text-xs font-bold text-secondary">
+                          <Sparkles className="h-3 w-3" />
+                          {stage.milestone}
+                        </span>
+                      )}
+                      {!isHighlight && (
+                        <span className="text-xs text-muted-foreground/70 font-medium">
+                          {stage.milestone}
+                        </span>
+                      )}
                     </div>
 
-                    {/* Content card below */}
-                    <div className="mt-4 w-full">
-                      <div
-                        className={`rounded-2xl p-4 transition-all duration-300 hover:-translate-y-0.5 ${
-                          isGolden
-                            ? "bg-golden border border-golden shadow-[0_4px_24px_-8px_hsl(var(--golden)/0.35)]"
-                            : isHighlight
-                              ? "bg-primary/[0.06] border border-primary/20 shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.15)]"
-                              : "bg-card"
-                        }`}
-                        style={!isHighlight && !isGolden ? { boxShadow: 'var(--shadow-card)' } : undefined}>
+                    <h4 className={`text-lg font-bold mb-3 ${
+                      isHighlight ? "text-primary" : "text-foreground"
+                    }`}>
+                      {stage.title}
+                    </h4>
 
-                        {/* Time label + milestone */}
-                        <div className="flex flex-wrap items-center justify-center gap-1.5 mb-2">
-                          <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${
-                            isGolden
-                              ? "bg-white/25 text-golden-foreground"
-                              : isHighlight
-                                ? "bg-primary text-primary-foreground"
-                                : "bg-muted text-muted-foreground"
-                          }`}>
-                            <Clock className="h-3 w-3" />
-                            {stage.timeLabel}
-                          </span>
-                          {(isHighlight || isGolden) && (
-                            <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${
-                              isGolden
-                                ? "bg-white/20 text-golden-foreground"
-                                : "bg-secondary/15 text-secondary"
-                            }`}>
-                              <Sparkles className="h-3 w-3" />
-                              {stage.milestone}
-                            </span>
-                          )}
-                        </div>
-
-                        <h4 className={`text-sm font-bold mb-2 text-center ${
-                          isGolden ? "text-golden-foreground" : isHighlight ? "text-primary" : "text-foreground"
-                        }`}>
-                          {stage.title}
-                        </h4>
-
-                        {!isHighlight && !isGolden && (
-                          <p className="text-[11px] text-muted-foreground/70 font-medium text-center mb-2">
-                            {stage.milestone}
-                          </p>
-                        )}
-
-                        <ul className="space-y-1.5">
-                          {stage.points.map((point, pi) => (
-                            <li key={pi} className="flex items-start gap-1.5 text-right">
-                              <ChevronLeft className={`mt-0.5 h-3 w-3 shrink-0 ${
-                                isGolden ? "text-golden-foreground/60" : isHighlight ? "text-primary/60" : "text-secondary/50"
-                              }`} />
-                              <span className={`text-xs leading-relaxed ${isGolden ? "text-golden-foreground/90" : "text-muted-foreground"}`}>{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+                    <ul className="space-y-2">
+                      {stage.points.map((point, pi) => (
+                        <li key={pi} className="flex items-start gap-2 text-right">
+                          <ChevronLeft className={`mt-0.5 h-4 w-4 shrink-0 ${
+                            isHighlight ? "text-primary/60" : "text-secondary/50"
+                          }`} />
+                          <span className="text-sm leading-relaxed text-muted-foreground">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
