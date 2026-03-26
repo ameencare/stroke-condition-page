@@ -51,6 +51,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         whatsapp: "hsl(var(--whatsapp))",
+        stage: {
+          urgent: "hsl(var(--stage-urgent))",
+          active: "hsl(var(--stage-active))",
+          progress: "hsl(var(--stage-progress))",
+          longterm: "hsl(var(--stage-longterm))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

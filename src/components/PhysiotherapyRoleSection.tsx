@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock, TrendingUp, CalendarCheck, Brain, Activity, Sparkles } from "lucide-react";
+import { Bike, Dumbbell, ArrowUp, Footprints, Star, Clock, TrendingUp, CalendarCheck, Brain, Activity, Sparkles, AlertTriangle } from "lucide-react";
 import benefitsImage from "@/assets/benefits-exercises.jpg";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
@@ -14,43 +14,43 @@ const benefits = [
 const journeyStages = [
   {
     step: 1,
-    icon: Brain,
-    title: "النافذة الذهبية",
+    icon: AlertTriangle,
+    title: "البداية المبكرة",
     timeLabel: "24 – 48 ساعة",
-    highlight: true,
-    label: "الوقت الذهبي",
-    color: "primary" as const,
-    points: ["بدء التأهيل", "تقييم شامل", "حركة بسيطة"],
+    subtitle: "ابدأ التأهيل فورًا بعد الاستقرار",
+    isCritical: true,
+    colorVar: "--stage-urgent",
+    colorClass: "stage-urgent",
   },
   {
     step: 2,
     icon: CalendarCheck,
-    title: "التأهيل المبكر",
+    title: "مرحلة التأهيل",
     timeLabel: "أيام – أسابيع",
-    highlight: false,
-    label: "الاستمرارية",
-    color: "secondary" as const,
-    points: ["علاج يومي", "تقوية وحركة", "زيادة تدريجية"],
+    subtitle: "علاج يومي مكثف",
+    isCritical: false,
+    colorVar: "--stage-active",
+    colorClass: "stage-active",
   },
   {
     step: 3,
     icon: TrendingUp,
-    title: "التعافي الأقصى",
+    title: "ذروة التعافي",
     timeLabel: "أول 3 أشهر",
-    highlight: true,
-    label: "أقصى تحسّن",
-    color: "primary" as const,
-    points: ["تحسن ملحوظ", "علاج مكثف", "استقلالية أكبر"],
+    subtitle: "أسرع فترة تحسّن",
+    isCritical: false,
+    colorVar: "--stage-progress",
+    colorClass: "stage-progress",
   },
   {
     step: 4,
     icon: Activity,
     title: "التعافي المستمر",
     timeLabel: "3 – 6+ أشهر",
-    highlight: false,
-    label: "الصبر مفتاح",
-    color: "muted-foreground" as const,
-    points: ["تحسن أبطأ", "تعديل نمط الحياة", "التزام مستمر"],
+    subtitle: "تقدّم أبطأ ومستمر",
+    isCritical: false,
+    colorVar: "--stage-longterm",
+    colorClass: "stage-longterm",
   },
 ];
 
@@ -130,8 +130,8 @@ const PhysiotherapyRoleSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.3, ease }}
-          className="mx-auto max-w-4xl text-center mb-10">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+          className="mx-auto max-w-4xl text-center mb-12">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-stage-urgent/10 px-4 py-2 text-sm font-semibold text-stage-urgent">
             <Clock className="h-4 w-4" />
             الوقت الذهبي للتعافي
           </div>
@@ -143,152 +143,167 @@ const PhysiotherapyRoleSection = () => {
           </p>
         </motion.div>
 
-        {/* Horizontal Journey Map */}
+        {/* Color-coded Journey Map */}
         <div className="mx-auto max-w-5xl">
-          {/* Desktop: horizontal flow */}
+          {/* Desktop */}
           <div className="hidden md:block">
             <div className="relative">
               {/* Connector line */}
-              <div className="absolute top-[3.25rem] right-[10%] left-[10%] h-0.5 bg-gradient-to-l from-primary/40 via-secondary/30 to-primary/40 z-0" />
-              
-              <div className="grid grid-cols-4 gap-3 relative z-10">
-                {journeyStages.map((stage, i) => {
-                  const isHighlight = stage.highlight;
-                  return (
-                    <motion.div
-                      key={stage.step}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.45, delay: i * 0.1, ease }}
-                      className="flex flex-col items-center group">
-                      
-                      {/* Step number */}
-                      <div className={`mb-2 text-xs font-bold rounded-full px-2 py-0.5 ${
-                        isHighlight ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
-                      }`}>
-                        {stage.step}
-                      </div>
+              <div className="absolute top-[3.5rem] right-[12%] left-[12%] h-1 rounded-full z-0"
+                style={{ background: `linear-gradient(to left, hsl(var(--stage-urgent)), hsl(var(--stage-active)), hsl(var(--stage-progress)), hsl(var(--stage-longterm)))` }} />
 
-                      {/* Icon node */}
-                      <div className={`relative flex h-14 w-14 items-center justify-center rounded-full border-[3px] transition-all duration-300 mb-4 ${
-                        isHighlight
-                          ? "border-primary bg-primary text-primary-foreground shadow-[0_0_24px_hsl(var(--primary)/0.3)] group-hover:shadow-[0_0_32px_hsl(var(--primary)/0.45)] group-hover:scale-110"
-                          : "border-border bg-card text-primary group-hover:border-primary/40 group-hover:scale-105"
-                      }`}>
-                        <stage.icon className="h-6 w-6" />
-                        {isHighlight && (
-                          <motion.div
-                            className="absolute -inset-1 rounded-full border-2 border-primary/30"
-                            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                          />
-                        )}
-                      </div>
+              <div className="grid grid-cols-4 gap-4 relative z-10">
+                {journeyStages.map((stage, i) => (
+                  <motion.div
+                    key={stage.step}
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.12, ease }}
+                    className="flex flex-col items-center group">
 
-                      {/* Card */}
-                      <div className={`w-full rounded-2xl p-4 text-center transition-all duration-300 group-hover:-translate-y-1 ${
-                        isHighlight
-                          ? "bg-primary/[0.06] border border-primary/20 shadow-[0_4px_20px_-6px_hsl(var(--primary)/0.15)] group-hover:shadow-[0_8px_30px_-6px_hsl(var(--primary)/0.25)]"
-                          : "bg-card group-hover:shadow-lg"
+                    {/* Step badge */}
+                    <div
+                      className="mb-2 text-xs font-bold rounded-full px-2.5 py-1 text-white"
+                      style={{ backgroundColor: `hsl(var(${stage.colorVar}))` }}>
+                      {stage.step}
+                    </div>
+
+                    {/* Icon node */}
+                    <div
+                      className={`relative flex items-center justify-center rounded-full border-[3px] text-white transition-all duration-300 mb-5 ${
+                        stage.isCritical
+                          ? "h-[4.5rem] w-[4.5rem] group-hover:scale-110"
+                          : "h-14 w-14 group-hover:scale-105"
                       }`}
-                      style={!isHighlight ? { boxShadow: 'var(--shadow-card)' } : undefined}>
-                        
-                        {/* Time badge */}
-                        <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold mb-2 ${
-                          isHighlight ? "bg-primary/15 text-primary" : "bg-muted text-muted-foreground"
-                        }`}>
-                          <Clock className="h-2.5 w-2.5" />
-                          {stage.timeLabel}
+                      style={{
+                        borderColor: `hsl(var(${stage.colorVar}))`,
+                        backgroundColor: `hsl(var(${stage.colorVar}))`,
+                        boxShadow: stage.isCritical
+                          ? `0 0 30px hsl(var(${stage.colorVar}) / 0.4), 0 0 60px hsl(var(${stage.colorVar}) / 0.15)`
+                          : `0 0 16px hsl(var(${stage.colorVar}) / 0.2)`,
+                      }}>
+                      <stage.icon className={stage.isCritical ? "h-8 w-8" : "h-6 w-6"} />
+                      {stage.isCritical && (
+                        <motion.div
+                          className="absolute -inset-1.5 rounded-full border-2"
+                          style={{ borderColor: `hsl(var(${stage.colorVar}) / 0.4)` }}
+                          animate={{ scale: [1, 1.25, 1], opacity: [0.6, 0, 0.6] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        />
+                      )}
+                    </div>
+
+                    {/* Card */}
+                    <div
+                      className={`w-full rounded-2xl p-5 text-center transition-all duration-300 group-hover:-translate-y-1 ${
+                        stage.isCritical ? "border-2" : "bg-card"
+                      }`}
+                      style={stage.isCritical
+                        ? {
+                          borderColor: `hsl(var(${stage.colorVar}) / 0.3)`,
+                          backgroundColor: `hsl(var(${stage.colorVar}) / 0.06)`,
+                          boxShadow: `0 8px 32px -8px hsl(var(${stage.colorVar}) / 0.2)`,
+                        }
+                        : { boxShadow: 'var(--shadow-card)' }
+                      }>
+
+                      {/* Time badge */}
+                      <span
+                        className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-bold mb-3 text-white"
+                        style={{ backgroundColor: `hsl(var(${stage.colorVar}))` }}>
+                        <Clock className="h-2.5 w-2.5" />
+                        {stage.timeLabel}
+                      </span>
+
+                      <h4
+                        className="text-base font-bold mb-1.5"
+                        style={{ color: `hsl(var(${stage.colorVar}))` }}>
+                        {stage.title}
+                      </h4>
+
+                      {stage.isCritical && (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-stage-urgent mb-1">
+                          <Sparkles className="h-3 w-3" />
+                          ابدأ مبكرًا
                         </span>
+                      )}
 
-                        <h4 className={`text-sm font-bold mb-1 ${isHighlight ? "text-primary" : "text-foreground"}`}>
-                          {stage.title}
-                        </h4>
-
-                        {isHighlight && (
-                          <span className="inline-flex items-center gap-1 text-[10px] font-bold text-secondary mb-2">
-                            <Sparkles className="h-2.5 w-2.5" />
-                            {stage.label}
-                          </span>
-                        )}
-
-                        <div className="space-y-1 mt-2">
-                          {stage.points.map((p, pi) => (
-                            <p key={pi} className="text-[11px] leading-snug text-muted-foreground">{p}</p>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
+                      <p className="text-xs leading-relaxed text-muted-foreground mt-1">
+                        {stage.subtitle}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Mobile: horizontal scroll cards */}
+          {/* Mobile: horizontal scroll */}
           <div className="md:hidden -mx-4 px-4">
-            <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
-              {journeyStages.map((stage, i) => {
-                const isHighlight = stage.highlight;
-                return (
-                  <motion.div
-                    key={stage.step}
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.08, ease }}
-                    className="snap-center shrink-0 w-[72vw] max-w-[280px]">
-                    
-                    <div className={`rounded-2xl p-5 h-full transition-all duration-300 ${
-                      isHighlight
-                        ? "bg-primary/[0.06] border border-primary/20 shadow-[0_4px_20px_-6px_hsl(var(--primary)/0.15)]"
-                        : "bg-card"
+            <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: 'none' }}>
+              {journeyStages.map((stage, i) => (
+                <motion.div
+                  key={stage.step}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08, ease }}
+                  className={`snap-center shrink-0 ${stage.isCritical ? "w-[78vw] max-w-[300px]" : "w-[68vw] max-w-[260px]"}`}>
+
+                  <div
+                    className={`rounded-2xl p-5 h-full transition-all duration-300 ${
+                      stage.isCritical ? "border-2" : "bg-card"
                     }`}
-                    style={!isHighlight ? { boxShadow: 'var(--shadow-card)' } : undefined}>
-                      
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className={`flex h-11 w-11 items-center justify-center rounded-full border-2 shrink-0 ${
-                          isHighlight
-                            ? "border-primary bg-primary text-primary-foreground shadow-[0_0_16px_hsl(var(--primary)/0.3)]"
-                            : "border-border bg-card text-primary"
-                        }`}>
-                          <stage.icon className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                            isHighlight ? "bg-primary/15 text-primary" : "bg-muted text-muted-foreground"
-                          }`}>
-                            <Clock className="h-2.5 w-2.5" />
-                            {stage.timeLabel}
-                          </span>
-                          <h4 className={`text-sm font-bold mt-0.5 ${isHighlight ? "text-primary" : "text-foreground"}`}>
-                            {stage.title}
-                          </h4>
-                        </div>
+                    style={stage.isCritical
+                      ? {
+                        borderColor: `hsl(var(${stage.colorVar}) / 0.3)`,
+                        backgroundColor: `hsl(var(${stage.colorVar}) / 0.06)`,
+                        boxShadow: `0 8px 32px -8px hsl(var(${stage.colorVar}) / 0.25)`,
+                      }
+                      : { boxShadow: 'var(--shadow-card)' }
+                    }>
+
+                    <div className="flex items-center gap-3 mb-3">
+                      <div
+                        className={`flex items-center justify-center rounded-full shrink-0 text-white ${
+                          stage.isCritical ? "h-14 w-14" : "h-11 w-11"
+                        }`}
+                        style={{
+                          backgroundColor: `hsl(var(${stage.colorVar}))`,
+                          boxShadow: `0 0 20px hsl(var(${stage.colorVar}) / 0.3)`,
+                        }}>
+                        <stage.icon className={stage.isCritical ? "h-7 w-7" : "h-5 w-5"} />
                       </div>
-
-                      {isHighlight && (
-                        <span className="inline-flex items-center gap-1 text-xs font-bold text-secondary mb-2">
-                          <Sparkles className="h-3 w-3" />
-                          {stage.label}
+                      <div>
+                        <span
+                          className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold text-white"
+                          style={{ backgroundColor: `hsl(var(${stage.colorVar}))` }}>
+                          <Clock className="h-2.5 w-2.5" />
+                          {stage.timeLabel}
                         </span>
-                      )}
-
-                      <div className="space-y-1.5">
-                        {stage.points.map((p, pi) => (
-                          <div key={pi} className="flex items-center gap-2">
-                            <span className={`h-1 w-1 rounded-full shrink-0 ${isHighlight ? "bg-primary" : "bg-secondary"}`} />
-                            <span className="text-xs text-muted-foreground">{p}</span>
-                          </div>
-                        ))}
+                        <h4
+                          className="text-sm font-bold mt-1"
+                          style={{ color: `hsl(var(${stage.colorVar}))` }}>
+                          {stage.title}
+                        </h4>
                       </div>
                     </div>
-                  </motion.div>
-                );
-              })}
+
+                    {stage.isCritical && (
+                      <span className="inline-flex items-center gap-1 text-xs font-bold text-stage-urgent mb-2">
+                        <Sparkles className="h-3 w-3" />
+                        ابدأ مبكرًا
+                      </span>
+                    )}
+
+                    <p className="text-xs leading-relaxed text-muted-foreground">
+                      {stage.subtitle}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-            {/* Scroll hint */}
             <p className="text-center text-xs text-muted-foreground/50 mt-2">← اسحب لرؤية المزيد →</p>
           </div>
         </div>

@@ -38,6 +38,11 @@
 
     --whatsapp: 142 70% 45%;
 
+    --stage-urgent: 15 90% 55%;
+    --stage-active: 210 80% 50%;
+    --stage-progress: 152 55% 45%;
+    --stage-longterm: 260 30% 60%;
+
     --shadow-card: 0 0 0 1px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 12px 24px -12px rgba(0,0,0,0.1);
     --shadow-card-hover: 0 0 0 1px rgba(0,0,0,0.05), 0 10px 20px -5px rgba(0,0,0,0.1);
 
