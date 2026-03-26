@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
-import { Brain, AlertTriangle, Footprints, Hand, Heart, Dna, PersonStanding, Cigarette, Activity, Droplets, Clock as ClockIcon } from "lucide-react";
+import { Brain, AlertTriangle, Footprints, Hand, Dna, Heart, PersonStanding } from "lucide-react";
 import brainImage from "@/assets/brain-stroke-illustration.png";
+import riskGeneticsImg from "@/assets/risk-genetics.jpg";
+import riskMedicalImg from "@/assets/risk-medical.jpg";
+import riskLifestyleImg from "@/assets/risk-lifestyle.jpg";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
@@ -14,45 +17,55 @@ const riskCategories = [
   {
     title: "عوامل لا يمكن تغييرها",
     icon: Dna,
-    color: "primary",
-    items: [
-      { text: "التقدم في العمر", bold: "العمر" },
-      { text: "التاريخ العائلي لأمراض القلب أو السكتة", bold: "التاريخ العائلي" },
-    ],
+    image: riskGeneticsImg,
+    color: "primary" as const,
+    items: ["العمر", "التاريخ العائلي"],
   },
   {
-    title: "عوامل صحية قابلة للتحكم",
+    title: "عوامل صحية",
     icon: Heart,
-    color: "destructive",
-    items: [
-      { text: "ارتفاع ضغط الدم", bold: "ضغط الدم" },
-      { text: "مرض السكري", bold: "السكري" },
-      { text: "ارتفاع الكوليسترول", bold: "الكوليسترول" },
-      { text: "أمراض القلب مثل الرجفان الأذيني", bold: "أمراض القلب" },
-    ],
+    image: riskMedicalImg,
+    color: "destructive" as const,
+    items: ["ضغط الدم", "السكري", "الكوليسترول", "الرجفان الأذيني"],
   },
   {
-    title: "عوامل نمط الحياة",
+    title: "نمط الحياة",
     icon: PersonStanding,
-    color: "secondary",
-    items: [
-      { text: "التدخين", bold: "التدخين" },
-      { text: "السمنة وزيادة الوزن", bold: "السمنة" },
-      { text: "قلة النشاط البدني", bold: "النشاط البدني" },
-    ],
+    image: riskLifestyleImg,
+    color: "secondary" as const,
+    items: ["التدخين", "السمنة", "قلة النشاط", "الكحول"],
   },
 ];
 
-const colorMap: Record<string, { bg: string; iconBg: string; text: string; dot: string }> = {
-  primary: { bg: "bg-primary/5", iconBg: "bg-primary/10", text: "text-primary", dot: "bg-primary" },
-  destructive: { bg: "bg-destructive/5", iconBg: "bg-destructive/10", text: "text-destructive", dot: "bg-destructive" },
-  secondary: { bg: "bg-secondary/5", iconBg: "bg-secondary/10", text: "text-secondary", dot: "bg-secondary" },
+const colorMap = {
+  primary: {
+    gradient: "from-primary/10 to-primary/5",
+    badge: "bg-primary/10 text-primary",
+    dot: "bg-primary",
+    border: "border-primary/15",
+    glow: "group-hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.25)]",
+  },
+  destructive: {
+    gradient: "from-destructive/10 to-destructive/5",
+    badge: "bg-destructive/10 text-destructive",
+    dot: "bg-destructive",
+    border: "border-destructive/15",
+    glow: "group-hover:shadow-[0_8px_30px_-8px_hsl(var(--destructive)/0.25)]",
+  },
+  secondary: {
+    gradient: "from-secondary/10 to-secondary/5",
+    badge: "bg-secondary/10 text-secondary",
+    dot: "bg-secondary",
+    border: "border-secondary/15",
+    glow: "group-hover:shadow-[0_8px_30px_-8px_hsl(var(--secondary)/0.25)]",
+  },
 };
 
 const StrokeDefinitionSection = () => {
   return (
     <section className="py-16 md:py-24">
       <div className="container">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,40 +112,53 @@ const StrokeDefinitionSection = () => {
               ))}
             </div>
 
-            {/* Risk Factors - Categorized */}
+            {/* Risk Factors - Visual Tiles */}
             <p className="text-base font-semibold text-foreground text-right mb-5">عوامل الخطر:</p>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-5 sm:grid-cols-3">
               {riskCategories.map((cat, ci) => {
                 const colors = colorMap[cat.color];
                 return (
                   <motion.div
                     key={ci}
-                    initial={{ opacity: 0, y: 12 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.2 + ci * 0.1, ease }}
-                    className={`rounded-2xl ${colors.bg} p-5`}>
-                    <div className="flex items-center gap-2.5 mb-4">
-                      <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${colors.iconBg}`}>
-                        <cat.icon className={`h-4.5 w-4.5 ${colors.text}`} />
+                    className={`group relative rounded-2xl border ${colors.border} bg-gradient-to-b ${colors.gradient} overflow-hidden transition-all duration-300 hover:-translate-y-1 ${colors.glow}`}>
+                    
+                    {/* Image header */}
+                    <div className="relative h-28 overflow-hidden">
+                      <img
+                        src={cat.image}
+                        alt={cat.title}
+                        loading="lazy"
+                        width={512}
+                        height={512}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                      <div className={`absolute bottom-3 right-3 ${colors.badge} rounded-full px-2.5 py-1 text-xs font-bold flex items-center gap-1.5 backdrop-blur-sm`}>
+                        <cat.icon className="h-3.5 w-3.5" />
+                        {cat.title}
                       </div>
-                      <h4 className="text-sm font-bold text-foreground">{cat.title}</h4>
                     </div>
-                    <ul className="space-y-2.5">
+
+                    {/* Items */}
+                    <div className="p-4 space-y-2">
                       {cat.items.map((item, ii) => (
-                        <li key={ii} className="flex items-start gap-2 text-right">
-                          <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${colors.dot}`} />
-                          <span className="text-sm text-muted-foreground leading-relaxed">{item.text}</span>
-                        </li>
+                        <div key={ii} className="flex items-center gap-2">
+                          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${colors.dot}`} />
+                          <span className="text-sm font-semibold text-foreground">{item}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </motion.div>
                 );
               })}
             </div>
-
           </motion.div>
 
+          {/* Brain illustration sidebar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
