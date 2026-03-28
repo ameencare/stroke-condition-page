@@ -32,7 +32,19 @@ const HeroSection = () => {
 
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
-                href="https://wa.me/966920034027"
+                href="#booking"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-secondary px-7 py-4 text-base font-bold text-secondary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
+                <CalendarCheck className="h-5 w-5" />
+                احجز جلسة علاج طبيعي
+              </a>
+              <a
+                href="#consultation"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-foreground/15 px-7 py-4 text-base font-semibold text-primary-foreground backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary-foreground/25 active:scale-[0.98]">
+                <Stethoscope className="h-5 w-5" />
+                اطلب استشارة مجانية
+              </a>
+              <a
+                href="https://wa.me/966500000000"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-whatsapp px-7 py-4 text-base font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">

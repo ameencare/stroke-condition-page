@@ -198,7 +198,19 @@ const HomeRehabSection = () => {
 
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a
-              href="https://wa.me/966920034027"
+              href="#booking"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 text-base font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
+              <CalendarCheck className="h-5 w-5" />
+              احجز جلسة علاج طبيعي الآن
+            </a>
+            <a
+              href="#consultation"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-muted px-6 py-4 text-base font-semibold text-foreground transition-all duration-300 hover:-translate-y-1 hover:bg-accent active:scale-[0.98]">
+              <Stethoscope className="h-5 w-5" />
+              اطلب استشارة هاتفية مجانية
+            </a>
+            <a
+              href="https://wa.me/966500000000"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-whatsapp px-6 py-4 text-base font-bold text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
