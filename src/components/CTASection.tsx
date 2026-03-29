@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { CalendarCheck, Stethoscope, MessageCircle } from "lucide-react";
+import { CalendarCheck, Stethoscope } from "lucide-react";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
@@ -42,9 +43,9 @@ const CTASection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="تواصل عبر واتساب"
-              className="inline-flex items-center justify-center rounded-lg bg-whatsapp p-4 text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
+              className="inline-flex items-center justify-center rounded-lg bg-whatsapp p-3 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
             >
-              <MessageCircle className="h-6 w-6" />
+              <img src={whatsappIcon} alt="واتساب" className="h-8 w-8" />
             </a>
           </div>
         </motion.div>

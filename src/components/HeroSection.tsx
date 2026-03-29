@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { CalendarCheck, Stethoscope, MessageCircle } from "lucide-react";
+import { CalendarCheck, Stethoscope } from "lucide-react";
 import heroImage from "@/assets/hero-home-therapy.jpg";
 import logoImage from "@/assets/logo-ameen.png";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const ease: [number, number, number, number] = [0.2, 0, 0, 1];
 
@@ -48,8 +49,8 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="تواصل عبر واتساب"
-              className="inline-flex items-center justify-center rounded-xl bg-whatsapp p-4 text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
-              <MessageCircle className="h-6 w-6" />
+              className="inline-flex items-center justify-center rounded-xl bg-whatsapp p-3 text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
+              <img src={whatsappIcon} alt="واتساب" className="h-8 w-8" />
             </a>
             </div>
           </motion.div>
