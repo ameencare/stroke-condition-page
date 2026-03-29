@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, MessageCircle, HeartHandshake } from "lucide-react";
+import { ClipboardCheck, Target, Stethoscope, TrendingUp, CalendarCheck, HeartHandshake } from "lucide-react";
+import whatsappIcon from "@/assets/whatsapp-icon.png";
 import journeyAssessment from "@/assets/journey-assessment.jpg";
 import journeyPlan from "@/assets/journey-plan.jpg";
 import journeyTherapy from "@/assets/journey-therapy.jpg";
@@ -213,8 +214,8 @@ const HomeRehabSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="تواصل عبر واتساب"
-              className="inline-flex items-center justify-center rounded-xl bg-whatsapp p-4 text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
-              <MessageCircle className="h-6 w-6" />
+              className="inline-flex items-center justify-center rounded-xl bg-whatsapp p-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
+              <img src={whatsappIcon} alt="واتساب" className="h-8 w-8" />
             </a>
           </div>
         </motion.div>
