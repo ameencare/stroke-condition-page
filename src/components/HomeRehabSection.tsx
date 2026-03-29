@@ -167,7 +167,6 @@ const HomeRehabSection = () => {
                 </div>
                 <div className="p-3 text-center">
                   <h4 className="text-sm font-bold text-foreground">{card.title}</h4>
-                  <p className="text-[11px] text-muted-foreground mt-0.5">{card.subtitle}</p>
                 </div>
               </motion.div>
             ))}
