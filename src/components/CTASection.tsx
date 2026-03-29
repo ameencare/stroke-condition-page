@@ -41,10 +41,10 @@ const CTASection = () => {
               href="https://wa.me/966500000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp px-6 py-4 text-base font-semibold text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
+              aria-label="تواصل عبر واتساب"
+              className="inline-flex items-center justify-center rounded-lg bg-whatsapp p-4 text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
             >
-              <MessageCircle className="h-5 w-5" />
-              تواصل عبر واتساب
+              <MessageCircle className="h-6 w-6" />
             </a>
           </div>
         </motion.div>
