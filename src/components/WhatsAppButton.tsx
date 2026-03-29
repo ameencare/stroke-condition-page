@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="تواصل عبر واتساب"
-      className="fixed bottom-6 left-6 z-50 flex h-16 w-16 items-center justify-center rounded-full overflow-hidden shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.98]"
+      className="fixed bottom-6 left-6 z-50 flex h-20 w-20 items-center justify-center rounded-full overflow-hidden shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.98]"
     >
       <img src={whatsappIcon} alt="واتساب" className="h-full w-full object-cover" />
     </a>
