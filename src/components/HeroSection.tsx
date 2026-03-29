@@ -50,7 +50,7 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               aria-label="تواصل عبر واتساب"
               className="inline-flex items-center justify-center rounded-xl bg-whatsapp p-3 text-primary-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
-              <img src={whatsappIcon} alt="واتساب" className="h-8 w-8" />
+              <img src={whatsappIcon} alt="واتساب" className="h-10 w-10 object-contain" />
             </a>
             </div>
           </motion.div>
