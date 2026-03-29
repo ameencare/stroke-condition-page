@@ -43,9 +43,9 @@ const CTASection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="تواصل عبر واتساب"
-              className="inline-flex items-center justify-center rounded-lg bg-whatsapp p-3 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
+              className="inline-flex h-[52px] w-[52px] items-center justify-center rounded-lg bg-whatsapp overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
             >
-              <img src={whatsappIcon} alt="واتساب" className="h-10 w-10 object-contain" />
+              <img src={whatsappIcon} alt="واتساب" className="h-full w-full object-cover" />
             </a>
           </div>
         </motion.div>
