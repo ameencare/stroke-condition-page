@@ -40,6 +40,7 @@ const journeyStages = [
     timeLabel: "أول 3 أشهر",
     subtitle: "أسرع فترة تحسّن",
     isCritical: true,
+    criticalLabel: "فترة ذهبية",
     colorVar: "--stage-progress",
     colorClass: "stage-progress",
   },
