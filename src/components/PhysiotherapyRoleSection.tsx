@@ -38,7 +38,7 @@ const journeyStages = [
     title: "ذروة التعافي",
     timeLabel: "أول 3 أشهر",
     subtitle: "أسرع فترة تحسّن",
-    isCritical: false,
+    isCritical: true,
     colorVar: "--stage-progress",
     colorClass: "stage-progress",
   },
