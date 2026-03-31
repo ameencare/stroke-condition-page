@@ -19,6 +19,7 @@ const journeyStages = [
     timeLabel: "24 – 48 ساعة",
     subtitle: "ابدأ التأهيل فورًا بعد الاستقرار",
     isCritical: true,
+    criticalLabel: "ابدأ مبكرًا",
     colorVar: "--stage-urgent",
     colorClass: "stage-urgent",
   },
