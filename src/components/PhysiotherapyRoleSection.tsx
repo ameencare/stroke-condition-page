@@ -225,10 +225,12 @@ const PhysiotherapyRoleSection = () => {
                       </h4>
 
                       {stage.isCritical && (
-                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-stage-urgent mb-1">
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold mb-1"
+                          style={{ color: `hsl(var(${stage.colorVar}))` }}>
                           <Sparkles className="h-3 w-3" />
-                          ابدأ مبكرًا
+                          {stage.criticalLabel}
                         </span>
+                      )}
                       )}
 
                       <p className="text-xs leading-relaxed text-muted-foreground mt-1">
