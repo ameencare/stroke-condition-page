@@ -231,7 +231,6 @@ const PhysiotherapyRoleSection = () => {
                           {stage.criticalLabel}
                         </span>
                       )}
-                      )}
 
                       <p className="text-xs leading-relaxed text-muted-foreground mt-1">
                         {stage.subtitle}
