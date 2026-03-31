@@ -19,6 +19,7 @@ const journeyStages = [
     timeLabel: "24 – 48 ساعة",
     subtitle: "ابدأ التأهيل فورًا بعد الاستقرار",
     isCritical: true,
+    criticalLabel: "ابدأ مبكرًا",
     colorVar: "--stage-urgent",
     colorClass: "stage-urgent",
   },
@@ -38,7 +39,8 @@ const journeyStages = [
     title: "ذروة التعافي",
     timeLabel: "أول 3 أشهر",
     subtitle: "أسرع فترة تحسّن",
-    isCritical: false,
+    isCritical: true,
+    criticalLabel: "فترة ذهبية",
     colorVar: "--stage-progress",
     colorClass: "stage-progress",
   },
@@ -223,9 +225,10 @@ const PhysiotherapyRoleSection = () => {
                       </h4>
 
                       {stage.isCritical && (
-                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-stage-urgent mb-1">
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold mb-1"
+                          style={{ color: `hsl(var(${stage.colorVar}))` }}>
                           <Sparkles className="h-3 w-3" />
-                          ابدأ مبكرًا
+                          {stage.criticalLabel}
                         </span>
                       )}
 
@@ -291,9 +294,10 @@ const PhysiotherapyRoleSection = () => {
                     </div>
 
                     {stage.isCritical && (
-                      <span className="inline-flex items-center gap-1 text-xs font-bold text-stage-urgent mb-2">
+                      <span className="inline-flex items-center gap-1 text-xs font-bold mb-2"
+                        style={{ color: `hsl(var(${stage.colorVar}))` }}>
                         <Sparkles className="h-3 w-3" />
-                        ابدأ مبكرًا
+                        {stage.criticalLabel}
                       </span>
                     )}
 
